@@ -107,6 +107,18 @@ section{position:relative;padding:clamp(76px,10vw,140px) 0}
   overflow:hidden;
 }
 .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(24px,5vw,80px);align-items:center}
+/* первый экран это фотобаннер клиента: заголовок и кикер запечены в картинку
+   (решение Екатерины 05.08), поэтому текстовый h1 остаётся только для поиска */
+.hero-b{min-height:auto;align-items:flex-start;padding:64px 0 72px}
+.hero-banner{position:relative;margin:0}
+.hero-banner img{width:100%;display:block;border-radius:3px;position:relative;z-index:1}
+.hero-banner::before{
+  content:'';position:absolute;inset:18px -18px -18px 18px;z-index:0;
+  border:1px solid rgba(201,162,39,.42);border-radius:3px;
+}
+.hero-under{max-width:44ch;margin-top:44px}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;
+  clip:rect(0 0 0 0);white-space:nowrap;border:0}
 /* кегль подобран под ДОСЛОВНУЮ шапку клиента (она длиннее слогана), чтобы первый экран
    вмещал заголовок, лид и кнопку целиком */
 .hero h1{font-size:clamp(30px,3.9vw,52px);line-height:1.12;margin:0 0 22px}
@@ -401,6 +413,9 @@ footer{padding:66px 0 52px;border-top:1px solid rgba(255,255,255,.07);color:var(
   .hero-grid,.author-grid{grid-template-columns:1fr;gap:34px}
   /* портрет не должен съедать первый экран: хук обязан быть виден сразу, без прокрутки */
   .hero-figure{order:-1;max-width:300px;margin-inline:auto}
+  .hero-b{padding:64px 0 48px}
+  .hero-banner::before{inset:12px -12px -12px 12px}
+  .hero-under{margin-top:34px}
   .hero-figure img{max-height:38svh;object-fit:cover;object-position:50% 12%}
   /* на 430px капитель антиквы упиралась в оба края экрана, поэтому цитата тут мельче и уже */
   .pull{font-size:26px;max-width:17ch}
@@ -443,11 +458,16 @@ footer{padding:66px 0 52px;border-top:1px solid rgba(255,255,255,.07);color:var(
 <body>
 <div class="prog"></div>
 
-<header class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <p class="kicker">Екатерина Корягина · метод Резонанса</p>
-      <h1>Код денег<br>нового времени</h1>
+<header class="hero hero-b">
+  <div class="wrap">
+    <figure class="hero-banner">
+      <picture>
+        <source media="(max-width:900px)" srcset="img/hero-tall.jpg">
+        <img src="img/hero.jpg" alt="Код денег нового времени. Екатерина Корягина, метод Резонанса" fetchpriority="high" width="1600" height="900">
+      </picture>
+    </figure>
+    <h1 class="sr-only">Код денег нового времени</h1>
+    <div class="hero-under">
       <p class="lead">Деньги творца приходят только к той, кто взяла ответственность за свой дар и за его проявленность в мир. Разбираю, как отличить своё дело души от выгодной ниши, в которой ты выгораешь третий год.</p>
       <div class="cta-row">
         <a class="btn" href="https://t.me/nastavnikkate" target="_blank" rel="noopener">Записаться на разбор</a>
@@ -455,10 +475,6 @@ footer{padding:66px 0 52px;border-top:1px solid rgba(255,255,255,.07);color:var(
       <p class="hero-note">Разбор веду лично я, в личке @nastavnikkate.</p>
       <div class="scroll-hint"><span></span>История ниже</div>
     </div>
-    <figure class="hero-figure">
-      <img src="img/hero.jpg" alt="Екатерина Корягина" fetchpriority="high" width="853" height="1280">
-      <figcaption></figcaption>
-    </figure>
   </div>
 </header>
 
