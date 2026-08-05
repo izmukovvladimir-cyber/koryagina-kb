@@ -173,6 +173,12 @@ h1{font-family:var(--font-display);font-size:36px;font-weight:700;letter-spacing
 .cta .eyebrow{color:var(--accent)}
 .cta-btn{font-family:var(--font-display);font-size:15px;font-weight:600;padding:13px 22px;border-radius:999px;background:var(--accent);color:var(--accent-ink);border:1px solid var(--accent);display:inline-flex;align-items:center;gap:9px}
 .cta-btn:hover{transform:translateY(-1px)}
+/* Вторая кнопка того же блока: личный разбор у Екатерины. Приоритет держим явным,
+   статья это главное действие (заливка акцентом), разбор вторичное (контур). */
+.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.cta-btn2{font-family:var(--font-display);font-size:14.5px;font-weight:600;padding:12px 20px;border-radius:999px;background:transparent;color:#f5f5f0;border:1px solid rgba(245,245,240,.42);display:inline-flex;align-items:center;gap:8px}
+.cta-btn2:hover{border-color:var(--accent);color:var(--accent)}
+.cta .hint{font-size:13.5px;line-height:1.5;color:rgba(245,245,240,.55);margin:14px 0 0}
 /* ============ footer ============ */
 .ft{border-top:1px solid var(--hair);background-image:radial-gradient(var(--dot) 1px,transparent 1px);background-size:9px 9px;padding:36px 0 26px}
 .ft-in{max-width:1340px;margin:0 auto;padding:0 44px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
@@ -267,7 +273,7 @@ h1{font-size:28px}
 <a class="card" data-cat="cat-den-gi-i-samocennost" href="/guide-pozitiv/"><div class="tag"><i class="d"></i>Деньги и самоценность</div><div class="ct">Позитив: проверка связи с реальностью за десять минут</div><p class="cd">Факты по счёту за шесть месяцев, зазор между цифрой и внутренним ощущением, свой замкнутый круг, вытесненное чувство под позитивным мышлением и одно ясное действие на сутки.</p><div class="cm">Кодовое слово: ПОЗИТИВ</div></a>
 </div>
 <div class="empty" id="empty" style="display:none">В этом разделе пока пусто</div>
-<div class="cta"><span class="eyebrow"><i class="dot"></i>Следующий шаг</span><div class="ttl">Прочитай, как это работает изнутри</div><p class="sub">Я собрала всё про Эльли в одну статью: как она находит мысль, из-за которой ты возвращаешься в одну и ту же историю, что при этом происходит с телом, результаты моих клиенток в цифрах, честно про опасения и сколько это стоит. Прочитай целиком и дальше решай сама.</p><a class="cta-btn" href="https://katekoryagina.ru/elli/?from=index">Читать статью<span class="ar">&#8594;</span></a></div>
+<div class="cta"><span class="eyebrow"><i class="dot"></i>Следующий шаг</span><div class="ttl">Прочитай, как это работает изнутри</div><p class="sub">Я собрала всё про Эльли в одну статью: как она находит мысль, из-за которой ты возвращаешься в одну и ту же историю, что при этом происходит с телом, результаты моих клиенток в цифрах, честно про опасения и сколько это стоит. Прочитай целиком и дальше решай сама.</p><div class="cta-row"><a class="cta-btn" href="https://katekoryagina.ru/elli/?from=index">Читать статью<span class="ar">&#8594;</span></a><a class="cta-btn2" href="https://t.me/nastavnikkate">Написать Кате лично</a></div><p class="hint">Хочешь разобрать свою ситуацию со мной</p></div>
 </main>
 <footer class="ft"><div class="ft-in"><a class="logo" href="/">Екатерина<i class="sq"></i>Корягина</a><span class="sp"></span><nav class="ft-links"><a href="/">Все материалы</a><a href="/about/">Обо мне</a><a href="https://katekoryagina.ru/elli/?from=index">Статья про Эльли</a></nav></div><div class="ft-bot">Екатерина Корягина · @nastavnikkate · Квантовый рост с Корягиной</div></footer>
 <script>
