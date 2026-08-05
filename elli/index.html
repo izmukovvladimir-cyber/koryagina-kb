@@ -829,6 +829,19 @@ footer{padding:66px 0 52px;border-top:1px solid rgba(255,255,255,.07);color:var(
 
 <script>
 document.addEventListener('DOMContentLoaded',function(){
+  // Source tag: the knowledge base links here as /elli/?from=<page-slug>. Carry that slug into the
+  // bot deep link so the cabinet can tell which material actually brings people in. Telegram only
+  // accepts A-Za-z0-9_- in a start payload and caps it at 64 chars, so sanitise before appending.
+  (function(){
+    var from=new URLSearchParams(location.search).get('from');
+    if(!from) return;
+    from=from.replace(/[^A-Za-z0-9_-]/g,'').slice(0,40);
+    if(!from) return;
+    document.querySelectorAll('a[href*="t.me/"]').forEach(function(a){
+      a.href=a.href.replace(/([?&]start=[^&]*)/,'$1_'+from);
+    });
+  })();
+
   var io=new IntersectionObserver(function(es){
     es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
