@@ -249,6 +249,43 @@ h1{font-size:28px}
 .calc .ctas a:hover{transform:translateY(-1px)}
 :root[data-theme=dark] .calc .ctas a{border-color:var(--accent)}
 :root[data-theme=dark] .calc .ctas a.alt{border-color:var(--card-border)}
+/* ============ мини-диагностика (квиз) ============ */
+.quiz{border:1px solid var(--card-border);border-radius:16px;padding:26px;margin:22px 0}
+.quiz .qt{font-family:var(--font-display);font-weight:700;font-size:22px;margin:0 0 8px;letter-spacing:-.02em}
+.quiz .qs{color:var(--muted);font-size:14.5px;margin:0 0 18px}
+.quiz .step{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.quiz .lead{font-size:16px;line-height:1.55;margin:0 0 14px;color:var(--text)}
+.quiz .qq{font-family:var(--font-display);font-weight:700;font-size:19px;margin:0 0 14px}
+.quiz .opts{display:flex;flex-direction:column;gap:8px}
+.quiz .opt{text-align:left;font-family:inherit;font-size:15.5px;line-height:1.4;padding:13px 16px;border-radius:12px;border:1px solid var(--card-border);background:none;color:var(--text);cursor:pointer;transition:border-color .15s,background .15s}
+.quiz .opt:hover{border-color:var(--muted)}
+.quiz .opt.on{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 14%,transparent);font-weight:600}
+.quiz .open{margin-top:16px;display:none}
+.quiz .open p{font-size:14.5px;color:var(--muted);margin:0 0 8px}
+.quiz textarea{width:100%;min-height:82px;padding:12px 14px;border:1px solid var(--card-border);border-radius:12px;background:var(--bg);color:var(--text);font-family:inherit;font-size:15.5px;line-height:1.45;resize:vertical}
+.quiz textarea:focus{outline:none;border-color:var(--muted)}
+.quiz .drow{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.quiz .fld{display:flex;flex-direction:column;gap:6px}
+.quiz .fld span{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.quiz input[type=number]{width:108px;padding:11px 12px;border:1px solid var(--card-border);border-radius:10px;background:var(--bg);color:var(--text);font-family:inherit;font-size:16px}
+.quiz input[type=number]:focus{outline:none;border-color:var(--muted)}
+.quiz .nav{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;align-items:center}
+.quiz .qbtn{font-family:var(--font-display);font-size:15px;font-weight:600;padding:12px 22px;border-radius:999px;background:var(--accent);color:var(--accent-ink);border:1.5px solid var(--ink);cursor:pointer;transition:transform .12s}
+.quiz .qbtn:hover{transform:translateY(-1px)}
+.quiz .qbtn.ghost{background:none;color:var(--muted);border-color:var(--card-border)}
+.quiz .qerr{color:#c0392b;font-size:14px;margin-top:12px;display:none}
+.quiz .res{display:none}
+.quiz .res h4{font-family:var(--font-display);font-size:27px;font-weight:700;margin:6px 0 14px;letter-spacing:-.02em}
+.quiz .res p{margin:0 0 12px;line-height:1.6}
+.quiz .res .lb{font-weight:700;display:block;margin-bottom:2px}
+.quiz .res .blk{padding:14px 16px;border-left:2px solid var(--accent);border-radius:0 10px 10px 0;background:color-mix(in srgb,var(--accent) 7%,transparent);margin:0 0 12px}
+.quiz .qcta{display:flex;flex-direction:column;gap:9px;margin-top:20px}
+.quiz .qcta a{font-family:var(--font-display);font-size:15px;font-weight:600;padding:13px 20px;border-radius:14px;border:1.5px solid var(--ink);background:var(--accent);color:var(--accent-ink);text-align:center;transition:transform .12s}
+.quiz .qcta a.alt{background:none;color:var(--text);border-color:var(--card-border)}
+.quiz .qcta a:hover{transform:translateY(-1px)}
+:root[data-theme=dark] .quiz .qcta a{border-color:var(--accent)}
+:root[data-theme=dark] .quiz .qcta a.alt{border-color:var(--card-border)}
+@media(max-width:520px){.quiz{padding:18px}.quiz .qq{font-size:17.5px}}
 .hero:not(.about-hero) .art{background:var(--ink) url('/media/hero.jpg') center right/cover no-repeat}.hero:not(.about-hero) .grid{display:none}.hero:not(.about-hero) .glow{display:none}@media(max-width:900px){.hero:not(.about-hero) .art{background-position:72% center}}.hero.about-hero{min-height:420px}.hero.about-hero .art{left:auto;right:0;width:50%;background:url('/media/photo_2026-07-17_09-15-24.jpg') right center/cover no-repeat;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 44%);mask-image:linear-gradient(90deg,transparent 0%,#000 44%)}.hero.about-hero .txt{max-width:50%;background:none}.hero.about-hero h1{font-size:32px;max-width:12ch}.hero.about-hero .desc{font-size:15px;max-width:30ch}@media(max-width:760px){.hero.about-hero{display:block;padding-top:210px}.hero.about-hero .art{left:0;right:0;width:100%;height:230px;background-position:center 22%;-webkit-mask-image:linear-gradient(180deg,#000 62%,transparent 100%);mask-image:linear-gradient(180deg,#000 62%,transparent 100%)}.hero.about-hero .txt{max-width:100%;padding-top:6px}.hero.about-hero h1{font-size:27px;max-width:none}.hero.about-hero .desc{max-width:none}}</style>
 <script>
 (function(){
@@ -273,7 +310,7 @@ h1{font-size:28px}
 <p class="meta">Диагностический тест на 12 вопросов с подсчётом результата: находит, в каком блоке жизни у тебя сидит самая активная тень, и даёт один конкретный шаг на сегодня.</p>
 <div class="how">Отвечай да или нет письменно, ставь галочку или просто считай в уме. Не редактируй ответ, бери первую реакцию. В конце посчитай да по каждому блоку отдельно.</div>
 <div class="sec"><h2 id="sec-0">Что такое тень и почему тест работает</h2><p>Тень, в методе Резонанса, это программа, записанная в детстве или в травматичном опыте, которая до сих пор принимает решения за тебя, пока ты думаешь, что решаешь сама. Никакой «плохой части тебя» здесь нет.</p><p>Тень не спрашивает разрешения. Она включается автоматически: в момент, когда нужно попросить больше денег, когда партнёр отдаляется, когда тело сигналит усталостью, а ты продолжаешь. Тест ниже честный подсчёт, не гадание: в каком из трёх блоков жизни у тебя больше всего автоматических да, там тень сейчас активнее всего и оттуда стоит начинать.</p><div class="note">Тест диагностический, не медицинский и не психиатрический. Если вопрос про тело или тревогу вызывает у тебя острую паническую реакцию, не дожимай тест, открой Эльли на SOS-режим.</div></div>
-<div class="sec"><h2 id="sec-1">Теневой архетип по дате рождения</h2><p>Дата рождения даёт число, которое в методе арканов показывает теневую сторону личности. Это та часть, которую ты чаще всего прячешь, и одновременно тот ресурс, который просится наружу. Посчитай свой аркан и читай разбор ниже.</p><div class="calc"><div class="ct">Твой теневой архетип по дате рождения</div><p class="cs">Введи дату рождения, и я посчитаю твой теневой аркан. Расчёт идёт прямо в браузере, дата никуда не отправляется и нигде не сохраняется.</p><div class="crow"><label class="fld"><span>День</span><input name="d" type="number" min="1" max="31" inputmode="numeric" placeholder="14"></label><label class="fld"><span>Месяц</span><input name="m" type="number" min="1" max="12" inputmode="numeric" placeholder="7"></label><label class="fld"><span>Год</span><input name="y" type="number" min="1930" max="2026" inputmode="numeric" placeholder="1989"></label><button class="cbtn" type="button">Посчитать</button></div><div class="cerr">Проверь дату: день от 1 до 31, месяц от 1 до 12, год четырьмя цифрами.</div><div class="cres"><div class="num"></div><h4></h4><p class="p1"></p><p class="p2"></p><p class="p3"></p><div class="ctas"><a class="" href="https://photokoryagina.tilda.ws/celay" target="_blank" rel="noopener">Практикум «Цельность»</a><a class="alt" href="https://t.me/nastavnikkate" target="_blank" rel="noopener">Личная распаковка тени</a></div></div><script type="application/json" id="calc-data">{"items": {"1": {"n": 1, "title": "Аркан 1. Маг", "shadow": "Ты делаешь всё сама и не просишь, потому что объяснять дольше. Силы уходят на доказательство, что ты справишься при любом раскладе.", "light": "Право открыто пользоваться своим инструментом и брать за него деньги.", "step": "Сегодня попроси о помощи в одном деле, где обычно тянешь сама."}, "2": {"n": 2, "title": "Аркан 2. Жрица", "shadow": "Ты знаешь ответ и молчишь, ждёшь, пока догадаются сами. Обида на непонимание копится годами и уходит в тело.", "light": "Твой голос и прямые слова о своих желаниях.", "step": "Скажи вслух одно желание, которое обычно держишь при себе."}, "3": {"n": 3, "title": "Аркан 3. Императрица", "shadow": "Ты кормишь, спасаешь и держишь всех, а сама живёшь на остатках. Любовь в твоей системе выдают за заботу.", "light": "Удовольствие и право принимать.", "step": "Прими сегодня один подарок или комплимент без слов «да ну что ты»."}, "4": {"n": 4, "title": "Аркан 4. Император", "shadow": "Контроль. Ты держишь всех и боишься отпустить, тело живёт в панцире и не расслабляется даже ночью.", "light": "Спокойная опора и доверие к своим правилам.", "step": "Отдай одно дело другому человеку и не проверяй результат до конца дня."}, "5": {"n": 5, "title": "Аркан 5. Иерофант", "shadow": "Ты живёшь по чужому правильно: как мама сказала, как принято, как надо. Своё желание слышно тише всех голосов.", "light": "Собственная система ценностей.", "step": "Назови одно правило, которое ты никогда не выбирала, и отмени его на неделю."}, "6": {"n": 6, "title": "Аркан 6. Влюблённые", "shadow": "Ты ждёшь, пока выберут тебя, и остаёшься там, где давно всё остыло. Выбор откладывается на потом годами.", "light": "Выбор из себя.", "step": "Прими до вечера одно решение, которое ты откладываешь."}, "7": {"n": 7, "title": "Аркан 7. Колесница", "shadow": "Гонка. Ты едешь на морально-волевых, а остановиться страшно, потому что тогда придётся почувствовать усталость.", "light": "Движение из желания.", "step": "Вычеркни из недели одно дело, которое ты делаешь на характере."}, "8": {"n": 8, "title": "Аркан 8. Справедливость", "shadow": "Ты ведёшь внутренние счета: кто кому должен, кто недодал, кого ты вытянула. Обида живёт годами и ест энергию.", "light": "Честность вслух и вовремя.", "step": "Закрой один старый счёт: скажи прямо или отпусти."}, "9": {"n": 9, "title": "Аркан 9. Отшельник", "shadow": "Ты закрываешься и никого не подпускаешь, чтобы не ранили. Внутри это называется самодостаточностью, по факту там одиночество.", "light": "Близость по твоему выбору.", "step": "Напиши первой человеку, с которым давно потерялся контакт."}, "10": {"n": 10, "title": "Аркан 10. Колесо Фортуны", "shadow": "Ты ждёшь знак, удобный момент, понедельник и хорошую луну. Жизнь в это время идёт мимо.", "light": "Своё действие вместо ожидания.", "step": "Сделай сегодня шаг, который откладывала до подходящего времени."}, "11": {"n": 11, "title": "Аркан 11. Сила", "shadow": "Злость под замком. Ты улыбаешься, когда внутри ярость, и тело собирает зажимы в челюсти, шее и спине.", "light": "Спокойная сила и прямое нет.", "step": "Скажи одно честное «мне это не подходит»."}, "12": {"n": 12, "title": "Аркан 12. Повешенный", "shadow": "Позиция жертвы. Ты терпишь и ждёшь, что однажды оценят и вернут по заслугам.", "light": "Право поменять положение.", "step": "Назови, чего ты ждёшь взамен своих жертв, и попроси это прямо."}, "13": {"n": 13, "title": "Аркан 13. Перерождение", "shadow": "Ты держишь то, что закончилось: отношения, проект, роль, дружбу. Место для нового занято мёртвым.", "light": "Способность отпускать и начинать заново.", "step": "Закрой или выброси одну вещь, которая давно неживая."}, "14": {"n": 14, "title": "Аркан 14. Умеренность", "shadow": "Ты живёшь в крайностях: то на разрыв, то в яму. Середина кажется скучной, поэтому её и нет.", "light": "Твой собственный ритм.", "step": "Поставь на завтра ровно столько дел, сколько реально сделаешь."}, "15": {"n": 15, "title": "Аркан 15. Дьявол", "shadow": "Залипания и зависимости: человек, еда, лента, «ещё немного потерплю». Внутри это выглядит как любовь и как выдержка.", "light": "Свобода и здоровое желание.", "step": "Убери на сутки одно залипание и заметь, что поднимется внутри."}, "16": {"n": 16, "title": "Аркан 16. Башня", "shadow": "Ты живёшь в ожидании удара и стелешь соломку. Радоваться страшно, кажется, что потом заберут.", "light": "Доверие к жизни.", "step": "Разреши себе радоваться одному хорошему событию, ничего не добавляя про «как бы чего не вышло»."}, "17": {"n": 17, "title": "Аркан 17. Звезда", "shadow": "Ты прячешься и уменьшаешь себя, чтобы не отвергли. Твоё видно и без слов, поэтому напряжение только растёт.", "light": "Проявленность.", "step": "Покажи сегодня публично одну свою работу или мысль."}, "18": {"n": 18, "title": "Аркан 18. Луна", "shadow": "Тревога и придумывание. Ты достраиваешь смыслы за других и живёшь внутри своих фантазий о плохом.", "light": "Ясность.", "step": "Задай прямой вопрос человеку, за которого ты всё придумала."}, "19": {"n": 19, "title": "Аркан 19. Солнце", "shadow": "Ты гасишь себя, чтобы не затмить других, и стесняешься собственной яркости.", "light": "Тепло и радость без разрешения.", "step": "Сделай то, от чего тебе просто хорошо, и не объясняй зачем."}, "20": {"n": 20, "title": "Аркан 20. Суд", "shadow": "Внутренний прокурор. Ты разбираешь свои ошибки годами и выносишь себе приговор каждый раз заново.", "light": "Право начать с чистого листа.", "step": "Прости себе вслух одну старую ошибку."}, "21": {"n": 21, "title": "Аркан 21. Мир", "shadow": "Масштаб пугает. Ты уменьшаешь запросы и объясняешь это словами «мне и так нормально».", "light": "Разрешение на большое.", "step": "Запиши цифру или цель, которую боишься произнести вслух."}, "22": {"n": 22, "title": "Аркан 22. Шут", "shadow": "Ты обесцениваешь важное шуткой и боишься быть серьёзной, когда говоришь о себе.", "light": "Лёгкость вместе с ответственностью.", "step": "Расскажи одному человеку о своём деле серьёзно, без самоиронии."}}}</script></div><div class="note">Аркан показывает направление. Приговора здесь нет. Тень становится силой в тот момент, когда ты называешь её своим именем и разрешаешь себе то, что там заперто.</div></div>
+<div class="sec"><h2 id="sec-1">Мини-диагностика: какая часть тебя живёт в тени</h2><p>Дата рождения здесь работает символическим ключом, без предсказаний. Ведущую тень собирают твои ответы: что цепляет в матери и в отце, какие люди раздражают, как ты защищаешься и в какой сфере чаще всего предаёшь себя.</p><div class="quiz"><div class="qt">Какая часть тебя живёт в тени?</div><p class="qs">Семь минут честности. Мини-диагностика покажет, какую свою силу ты запретила, почему тебя так цепляют родители и где ты теряешь энергию, деньги и себя.</p><div class="stage"></div><div class="qerr"></div><div class="nav"><button class="qbtn go" type="button">Начать</button></div><div class="res"></div><script type="application/json" id="quiz-data">{"title": "Какая часть тебя живёт в тени?", "sub": "Семь минут честности. Мини-диагностика покажет, какую свою силу ты запретила, почему тебя так цепляют родители и где ты теряешь энергию, деньги и себя.", "intro": "Семь коротких экранов. Отвечай первой реакцией, правильных ответов здесь нет. В конце получишь свою карту тени: ведущая тень, защитный сценарий, родительский слой и сила, которую пора вернуть.", "screens": [{"id": "date", "kind": "date", "q": "Напиши дату рождения. Мы берём её как символический ключ к твоему исследованию, без предсказаний судьбы.", "lead": "Иногда мы всю жизнь пытаемся стать лучшей версией себя. Прорыв начинается там, где ты перестаёшь отвергать часть себя."}, {"id": "mother", "kind": "choice", "q": "Что в маме раздражает тебя сильнее всего?", "lead": "Обвинять маму здесь не нужно. Мы смотрим только на то, что её образ до сих пор включает в тебе сильную реакцию.", "options": [{"t": "Она слишком терпит и не выбирает себя", "tag": "sila"}, {"t": "Она всё контролирует и вмешивается", "tag": "svoboda"}, {"t": "Она холодная, отстранённая или критичная", "tag": "blizost"}, {"t": "Она тревожная, зависимая от чужого мнения", "tag": "proyavlennost"}, {"t": "Она думает только о себе и не слышит других", "tag": "uyazvimost"}, {"t": "Другое", "tag": ""}], "open": {"q": "Закончи фразу", "ph": "Я никогда не позволю себе быть такой, потому что…"}}, {"id": "father", "kind": "choice", "q": "Что в отце тебе труднее всего принять?", "lead": "Мы запрещаем себе не только черты родителей. Мы запрещаем себе силу, деньги, близость, уязвимость и свободу, чтобы не стать на них похожими.", "options": [{"t": "Его слабость, бездействие, отсутствие опоры", "tag": "uyazvimost"}, {"t": "Его жёсткость, давление, агрессию", "tag": "sila"}, {"t": "Его холодность и эмоциональную дистанцию", "tag": "blizost"}, {"t": "Его безответственность и нестабильность", "tag": "svoboda"}, {"t": "Его эгоизм, власть, потребность всё решать самому", "tag": "proyavlennost"}, {"t": "Другое", "tag": ""}], "open": {"q": "Закончи фразу", "ph": "Глядя на него, я решила, что нельзя быть…"}}, {"id": "trigger", "kind": "choice", "q": "Какие люди вызывают у тебя непропорционально сильное раздражение?", "lead": "Иногда раздражение говорит о реально нарушенной границе. Иногда это сигнал: в другом человеке живёт качество, которое ты себе запретила. Эти два случая мы разведём.", "options": [{"t": "Громкие, заметные, самоуверенные", "tag": "proyavlennost"}, {"t": "Слабые, зависимые, постоянно жалующиеся", "tag": "uyazvimost"}, {"t": "Холодные, отстранённые, недоступные", "tag": "blizost"}, {"t": "Контролирующие, властные, жёсткие", "tag": "sila"}, {"t": "Легкомысленные, свободные, живущие для себя", "tag": "svoboda"}, {"t": "Те, кто получает больше, хотя, как тебе кажется, меньше достоин", "tag": "proyavlennost"}]}, {"id": "defense", "kind": "choice", "q": "Когда тебе больно, страшно или стыдно, ты чаще всего…", "options": [{"t": "Всё тащу сама и не прошу помощи", "tag": "uyazvimost"}, {"t": "Становлюсь удобной, чтобы меня не отвергли", "tag": "sila"}, {"t": "Ухожу в контроль, работу и достижения", "tag": "svoboda"}, {"t": "Исчезаю, закрываюсь, отдаляюсь", "tag": "blizost"}, {"t": "Спасаю других, забывая о себе", "tag": "svoboda"}, {"t": "Взрываюсь, обесцениваю, нападаю первой", "tag": "uyazvimost"}]}, {"id": "sphere", "kind": "choice", "q": "В какой сфере ты чаще всего чувствуешь, что предаёшь себя?", "options": [{"t": "Деньги и масштаб", "tag": ""}, {"t": "Отношения и близость", "tag": ""}, {"t": "Тело, энергия, усталость", "tag": ""}, {"t": "Проявленность, блог, голос", "tag": ""}, {"t": "Реализация и выбор своего пути", "tag": ""}, {"t": "Отношения с собой", "tag": ""}]}, {"id": "truth", "kind": "choice", "q": "Какую фразу тебе больнее всего признать?", "lead": "Последний вопрос. Долго не думай.", "options": [{"t": "Я устала быть сильной", "tag": "uyazvimost"}, {"t": "Я боюсь, что без пользы меня не выберут", "tag": "blizost"}, {"t": "Я злюсь, но запрещаю себе злиться", "tag": "sila"}, {"t": "Я хочу большего и боюсь, что это слишком", "tag": "proyavlennost"}, {"t": "Я не умею принимать любовь и поддержку", "tag": "blizost"}, {"t": "Я хочу перестать жить чужим сценарием", "tag": "svoboda"}]}], "results": {"sila": {"title": "Запрещённая сила", "body": "Ты сильный человек, и в этом всё дело. Ты слишком давно привыкла справляться, сглаживать, терпеть и быть той, на кого можно опереться. В тени осталась сила, которую ты когда-то посчитала опасной: право злиться, отказывать, хотеть больше и выбирать себя без объяснений. Чужая наглость и жёсткость цепляют тебя именно поэтому: твоя психика устала жить без права защищать свои границы.", "script": "Я буду хорошей, сильной и понятной, чтобы меня не отвергли.", "price": "Ты копишь злость, соглашаешься на меньшее, устаёшь от людей и в какой-то момент либо исчезаешь, либо взрываешься.", "power": "Умение говорить «нет» без чувства вины и выбирать себя до того, как тело начнёт кричать усталостью.", "practice": "День первый: назови одну ситуацию, где ты давно соглашаешься против себя. День второй: произнеси там одну честную фразу «мне это не подходит, я выбираю по-другому». День третий: запиши, что после этого изменилось в теле."}, "uyazvimost": {"title": "Запрещённая уязвимость", "body": "Ты держишь себя в форме воина: справлюсь, вывезу, разберусь. Просить о помощи внутри читается как признание слабости, поэтому ты и не просишь. В тени осталась твоя нуждаемость, мягкость и право быть живой женщиной рядом с людьми. Люди, которые жалуются и опираются на других, раздражают тебя сильнее всего, потому что им можно то, что ты себе запретила.", "script": "Я никого не гружу собой, я справлюсь сама.", "price": "Ты живёшь в постоянном напряжении, близкие не знают твоих настоящих состояний, а тело собирает усталость, которую отпуск уже не снимает.", "power": "Право попросить и опереться, оставаясь сильной.", "practice": "День первый: выпиши три вещи, в которых тебе реально нужна помощь. День второй: попроси об одной из них конкретного человека. День третий: заметь, что мир не рухнул, и запиши, как это ощущалось."}, "proyavlennost": {"title": "Запрещённая проявленность", "body": "Ты хочешь большего и держишь это при себе. Внутри живёт установка, что желание быть заметной и получать много выглядит нескромно. Поэтому ты вечно готовишься, доучиваешься и ждёшь момента, когда будешь достойна. В тени осталась твоя амбиция и право занимать своё место. Громкие и уверенные люди цепляют тебя ровно потому, что они себе это разрешили.", "script": "Сначала стану достойной, потом заявлю о себе.", "price": "Твои идеи выносят другие, доход упирается в потолок, а внутри копится ощущение, что жизнь идёт мимо.", "power": "Право говорить о себе вслух и хотеть много.", "practice": "День первый: назови вслух своё желание с цифрой. День второй: покажи публично одну свою работу или мысль. День третий: запиши, чей голос в голове говорит «слишком много», и чей он на самом деле."}, "svoboda": {"title": "Запрещённая свобода", "body": "Ты живёшь в режиме долга. Сначала обязанности, потом дела других, а своё желание идёт последним пунктом и часто отменяется. В тени осталась твоя спонтанность, удовольствие и право хотеть просто так. Люди, которые живут для себя и не оправдываются, вызывают у тебя сильную реакцию, потому что внутри у тебя на это стоит запрет.", "script": "Сначала всё сделаю, потом позволю себе жить.", "price": "Ты живёшь через контроль и сверхответственность, отдых воспринимаешь как лень, и энергия уходит на удержание всего сразу.", "power": "Право выбирать себя без вины и получать удовольствие без повода.", "practice": "День первый: сделай одно дело только потому, что тебе хочется. День второй: отмени одно дело из чувства долга. День третий: запиши, что поднялось внутри, когда ты это отменила."}, "blizost": {"title": "Запрещённая близость", "body": "Ты умеешь держать дистанцию так, что со стороны это выглядит как спокойствие и самодостаточность. Внутри там страх: подпустишь ближе, и снова будет больно. В тени осталось твоё доверие, право нуждаться в тепле и быть живой рядом с другим человеком. Холодные и недоступные люди цепляют тебя сильнее всего, потому что в них ты узнаёшь собственную защиту.", "script": "Я лучше сама, зато меня никто не тронет.", "price": "Отношения остаются на безопасной дистанции, тепло не доходит, и одиночество копится даже среди людей.", "power": "Способность оставаться в контакте, не теряя себя.", "practice": "День первый: скажи близкому человеку одну настоящую вещь о своём состоянии. День второй: побудь в разговоре на десять минут дольше, чем хочется закрыться. День третий: запиши, где именно в теле включается желание уйти."}}, "fallback": "sila", "tie": {"q": "Что страшнее: быть неудобной или остаться незамеченной?", "options": [{"t": "Быть неудобной", "tag": "sila"}, {"t": "Остаться незамеченной", "tag": "proyavlennost"}]}, "sphere_line": "Здесь сценарий виден яснее всего, поэтому начинать проще отсюда.", "after": "Это верхний слой. Полная карта разбирается лично, там видно, где именно ты живёшь чужой жизнью и каким действием возвращается опора.", "date_err": "Проверь дату: день от 1 до 31, месяц от 1 до 12, год четырьмя цифрами.", "pick_err": "Выбери один вариант, чтобы идти дальше.", "cta": [{"label": "Хочу разобрать свой сценарий лично", "url": "https://t.me/nastavnikkate"}, {"label": "Хочу в «Резонанс»", "url": "https://photokoryagina.tilda.ws/rezonans"}, {"label": "Хочу пока побыть с этим сама", "url": "https://t.me/provdox"}]}</script></div><div class="note">Диагностика бережная и не ставит диагнозов. Сильная реакция на другого человека бывает и сигналом внутреннего запрета, и ответом на реально нарушенную границу. Если тема поднимает острое состояние, открой Эльли на SOS-режим.</div></div>
 <div class="sec"><h2 id="sec-2">Блок 1. Деньги</h2><p>Считай каждое да, запиши число рядом с блоком.</p><ol><li>Тебе физически неудобно называть цену выше той, что называла раньше, даже если рынок и опыт это давно оправдывают</li><li>Когда приходят деньги больше обычного, в первые сутки ты находишь, куда их срочно потратить или отдать</li><li>Ты можешь месяцами откладывать разговор о повышении, зарплате или чеке, хотя внутри знаешь, что заслужила</li><li>Тебе легче объяснить себе, почему у других получилось заработать больше, чем поверить, что получится у тебя</li></ol><div class="note">Сумма да по этому блоку: ___ из 4.</div></div>
 <div class="sec"><h2 id="sec-3">Блок 2. Отношения</h2><p>Тот же принцип: да, если узнала себя, нет, если нет.</p><ol><li>Ты первой чувствуешь, что в отношениях что-то не так, и последней говоришь об этом вслух</li><li>Тебе проще простить и промолчать, чем назвать вещь своим именем и рискнуть конфликтом</li><li>Ты ловила себя на мысли «я слишком много прошу», хотя объективно просила о базовом</li><li>После разрыва или предательства тебе привычнее искать, что сделала не так ты, чем признать чужой выбор чужим</li></ol><div class="note">Сумма да по этому блоку: ___ из 4.</div></div>
 <div class="mid"><a href="https://katekoryagina.ru/elli/?from=test-ten">Статья про Эльли</a></div>
@@ -282,7 +319,7 @@ h1{font-size:28px}
 <div class="sec"><h2 id="sec-6">Действие на сегодня</h2><p>Один шаг под свой результат, не три, не план на месяц.</p><p>Возьми блок с самой высокой суммой да и сделай сегодня ровно одно из трёх ниже, то, что относится к твоему результату.</p><ul><li>Тень Недостойной: сегодня назови вслух или письменно цифру, которую давно боишься произнести, партнёру, клиенту, начальнику, не обязательно отправлять сразу, но сформулируй её как факт, не как мечту</li><li>Тень Спасательницы: сегодня не сделай за другого то, что он может сделать сам, один раз, посмотри, что почувствуешь в паузе</li><li>Тень Отличницы: сегодня останови себя за 10 минут до финала задачи и отдохни, не дожидаясь, пока тело заставит</li></ul><a class="linkbtn" href="https://t.me/ai_coachs_bot?start=stat" target="_blank" rel="noopener">Написать слово ТЕНЬ Эльли и разобрать свою тень по методу Резонанса</a></div>
 <div class="cta"><span class="eyebrow"><i class="dot"></i>Следующий шаг</span><div class="ttl">Прочитай, как это работает изнутри</div><p class="sub">Я собрала всё про Эльли в одну статью: как она находит мысль, из-за которой ты возвращаешься в одну и ту же историю, что при этом происходит с телом, результаты моих клиенток в цифрах, честно про опасения и сколько это стоит. Прочитай целиком и дальше решай сама.</p><div class="cta-row"><a class="cta-btn" href="https://katekoryagina.ru/elli/?from=test-ten">Читать статью<span class="ar">&#8594;</span></a><a class="cta-btn2" href="https://t.me/nastavnikkate">Написать Кате лично</a></div><p class="hint">Хочешь разобрать свою ситуацию со мной</p></div>
 </article>
-<aside class="toc"><div class="h">На странице</div><a href="#sec-0">Что такое тень и почему тест работает</a><a href="#sec-1">Теневой архетип по дате рождения</a><a href="#sec-2">Блок 1. Деньги</a><a href="#sec-3">Блок 2. Отношения</a><a href="#sec-4">Блок 3. Тело и энергия</a><a href="#sec-5">Результат. Три тени</a><a href="#sec-6">Действие на сегодня</a></aside>
+<aside class="toc"><div class="h">На странице</div><a href="#sec-0">Что такое тень и почему тест работает</a><a href="#sec-1">Мини-диагностика: какая часть тебя живёт в тени</a><a href="#sec-2">Блок 1. Деньги</a><a href="#sec-3">Блок 2. Отношения</a><a href="#sec-4">Блок 3. Тело и энергия</a><a href="#sec-5">Результат. Три тени</a><a href="#sec-6">Действие на сегодня</a></aside>
 </main>
 <footer class="ft"><div class="ft-in"><a class="logo" href="/">Екатерина<i class="sq"></i>Корягина</a><span class="sp"></span><nav class="ft-links"><a href="/">Все материалы</a><a href="/about/">Обо мне</a><a href="https://katekoryagina.ru/elli/?from=test-ten">Статья про Эльли</a></nav></div><div class="ft-bot">Екатерина Корягина · @nastavnikkate · Квантовый рост с Корягиной</div></footer>
 <script>
@@ -330,31 +367,107 @@ document.querySelectorAll('.copy').forEach(function(b){
 
 <script>
 (function(){
-  var box=document.querySelector('.calc');if(!box)return;
-  var data=null;
-  try{data=JSON.parse(document.getElementById('calc-data').textContent);}catch(e){return;}
-  var d=box.querySelector('[name=d]'),m=box.querySelector('[name=m]'),y=box.querySelector('[name=y]');
-  var err=box.querySelector('.cerr'),res=box.querySelector('.cres');
-  function reduce(n){while(n>22){n-=22;}return n===0?22:n;}
-  function calc(){
-    var dv=parseInt(d.value,10),mv=parseInt(m.value,10),yv=parseInt(y.value,10);
-    var ok=dv>=1&&dv<=31&&mv>=1&&mv<=12&&yv>=1930&&yv<=new Date().getFullYear();
-    if(!ok){err.style.display='block';res.style.display='none';return;}
+  var box=document.querySelector('.quiz');if(!box)return;
+  var D=null;try{D=JSON.parse(document.getElementById('quiz-data').textContent);}catch(e){return;}
+  var stage=box.querySelector('.stage'),res=box.querySelector('.res'),err=box.querySelector('.qerr');
+  var idx=-1,tags={},answers=[],sphere='',born='';
+  function esc(t){var d=document.createElement('div');d.textContent=t||'';return d.innerHTML;}
+  function add(tag){if(!tag)return;tags[tag]=(tags[tag]||0)+1;}
+  function total(n){return D.screens.length;}
+  function render(){
     err.style.display='none';
-    var digits=(String(dv)+String(mv)+String(yv)).split('');
-    var sum=0;for(var i=0;i<digits.length;i++){sum+=parseInt(digits[i],10);}
-    var a=data.items[String(reduce(sum))];
-    if(!a)return;
-    res.querySelector('.num').textContent='Твой теневой аркан '+a.n+' из 22';
-    res.querySelector('h4').textContent=a.title;
-    res.querySelector('.p1').textContent=a.shadow;
-    res.querySelector('.p2').innerHTML='<span class="lb">Что просится наружу.</span> '+a.light;
-    res.querySelector('.p3').innerHTML='<span class="lb">Первый шаг.</span> '+a.step;
-    res.style.display='block';
-    res.scrollIntoView({behavior:'smooth',block:'nearest'});
+    if(idx<0){
+      stage.innerHTML='<div class="lead">'+esc(D.intro)+'</div>';
+      box.querySelector('.go').textContent='Начать';return;
+    }
+    var s=D.screens[idx];
+    var h='<div class="step">Экран '+(idx+1)+' из '+total()+'</div>';
+    if(s.lead)h+='<div class="lead">'+esc(s.lead)+'</div>';
+    h+='<div class="qq">'+esc(s.q)+'</div>';
+    if(s.kind==='date'){
+      h+='<div class="drow">'+
+        '<label class="fld"><span>День</span><input name="d" type="number" min="1" max="31" inputmode="numeric" placeholder="14"></label>'+
+        '<label class="fld"><span>Месяц</span><input name="m" type="number" min="1" max="12" inputmode="numeric" placeholder="7"></label>'+
+        '<label class="fld"><span>Год</span><input name="y" type="number" min="1930" max="2026" inputmode="numeric" placeholder="1989"></label></div>';
+    }else{
+      h+='<div class="opts">';
+      for(var i=0;i<s.options.length;i++){h+='<button class="opt" type="button" data-i="'+i+'">'+esc(s.options[i].t)+'</button>';}
+      h+='</div>';
+      if(s.open){h+='<div class="open"><p>'+esc(s.open.q)+'</p><textarea placeholder="'+esc(s.open.ph)+'"></textarea></div>';}
+    }
+    stage.innerHTML=h;
+    box.querySelector('.go').textContent='Дальше';
+    stage.querySelectorAll('.opt').forEach(function(b){
+      b.addEventListener('click',function(){
+        stage.querySelectorAll('.opt').forEach(function(x){x.classList.remove('on');});
+        b.classList.add('on');
+        var o=stage.querySelector('.open');if(o)o.style.display='block';
+      });
+    });
   }
-  box.querySelector('.cbtn').addEventListener('click',calc);
-  box.addEventListener('keydown',function(e){if(e.key==='Enter')calc();});
+  function next(){
+    if(idx<0){idx=0;render();return;}
+    var s=D.screens[idx];
+    if(s.kind==='date'){
+      var dv=stage.querySelector('[name=d]').value,mv=stage.querySelector('[name=m]').value,yv=stage.querySelector('[name=y]').value;
+      var d=parseInt(dv,10),m=parseInt(mv,10),y=parseInt(yv,10);
+      if(!(d>=1&&d<=31&&m>=1&&m<=12&&y>=1930&&y<=new Date().getFullYear())){err.textContent=D.date_err;err.style.display='block';return;}
+      born=d+'.'+m+'.'+y;answers.push(s.q+' '+born);
+    }else{
+      var sel=stage.querySelector('.opt.on');
+      if(!sel){err.textContent=D.pick_err;err.style.display='block';return;}
+      var o=s.options[parseInt(sel.getAttribute('data-i'),10)];
+      add(o.tag);
+      if(s.id==='sphere')sphere=o.t;
+      var line=s.q+' '+o.t;
+      var ta=stage.querySelector('textarea');
+      if(ta&&ta.value.trim())line+=' | '+s.open.q+' '+ta.value.trim();
+      answers.push(line);
+    }
+    idx++;
+    if(idx<D.screens.length){render();window.scrollTo({top:box.getBoundingClientRect().top+window.pageYOffset-80,behavior:'smooth'});return;}
+    show();
+  }
+  function lead(){
+    var best=null,bn=-1,ties=[];
+    for(var k in tags){if(tags[k]>bn){bn=tags[k];best=k;ties=[k];}else if(tags[k]===bn){ties.push(k);}}
+    return {key:best,ties:ties};
+  }
+  function show(){
+    var L=lead();
+    if(L.ties.length>1&&D.tie&&!box.getAttribute('data-tie')){
+      box.setAttribute('data-tie','1');
+      var h='<div class="step">Последний вопрос</div><div class="qq">'+esc(D.tie.q)+'</div><div class="opts">';
+      for(var i=0;i<D.tie.options.length;i++){h+='<button class="opt" type="button" data-t="'+esc(D.tie.options[i].tag)+'">'+esc(D.tie.options[i].t)+'</button>';}
+      h+='</div>';stage.innerHTML=h;
+      stage.querySelectorAll('.opt').forEach(function(b){
+        b.addEventListener('click',function(){add(b.getAttribute('data-t'));show();});
+      });
+      return;
+    }
+    var r=D.results[L.key]||D.results[D.fallback];
+    stage.style.display='none';box.querySelector('.nav').style.display='none';
+    var sp=sphere?('<p><span class="lb">Где это бьёт сильнее.</span> '+esc(sphere)+'. '+esc(D.sphere_line)+'</p>'):'';
+    res.innerHTML='<div class="step">Твоя карта тени</div><h4>'+esc(r.title)+'</h4>'+
+      '<p>'+esc(r.body)+'</p>'+
+      '<div class="blk"><span class="lb">Твой защитный сценарий</span>'+esc(r.script)+'</div>'+
+      '<div class="blk"><span class="lb">Цена этого сценария</span>'+esc(r.price)+'</div>'+
+      '<div class="blk"><span class="lb">Сила, которую пора вернуть</span>'+esc(r.power)+'</div>'+
+      sp+
+      '<div class="blk"><span class="lb">Практика на три дня</span>'+esc(r.practice)+'</div>'+
+      '<p>'+esc(D.after)+'</p>'+
+      '<div class="qcta">'+D.cta.map(function(c,i){return '<a class="'+(i?'alt':'')+'" href="'+esc(c.url)+'" target="_blank" rel="noopener">'+esc(c.label)+'</a>';}).join('')+'</div>'+
+      '<div class="nav"><button class="qbtn ghost copy-ans" type="button">Скопировать мои ответы</button></div>';
+    res.style.display='block';
+    res.querySelector('.copy-ans').addEventListener('click',function(){
+      var NL=String.fromCharCode(10);
+      var b=this,t='Моя карта тени: '+r.title+NL+'Дата: '+born+NL+answers.join(NL);
+      navigator.clipboard.writeText(t).then(function(){b.textContent='Скопировано';setTimeout(function(){b.textContent='Скопировать мои ответы';},1600);});
+    });
+    res.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+  box.querySelector('.go').addEventListener('click',next);
+  render();
 })();
 </script>
 </body></html>
