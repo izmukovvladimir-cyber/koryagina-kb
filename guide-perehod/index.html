@@ -260,6 +260,17 @@ h1{font-size:28px}
 .quiz .opt{text-align:left;font-family:inherit;font-size:15.5px;line-height:1.4;padding:13px 16px;border-radius:12px;border:1px solid var(--card-border);background:none;color:var(--text);cursor:pointer;transition:border-color .15s,background .15s}
 .quiz .opt:hover{border-color:var(--muted)}
 .quiz .opt.on{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 14%,transparent);font-weight:600}
+.quiz .yn{display:flex;flex-direction:column;gap:10px}
+.quiz .ynr{display:flex;gap:14px;align-items:flex-start;justify-content:space-between;
+  padding:13px 16px;border:1px solid var(--card-border);border-radius:12px;flex-wrap:wrap}
+.quiz .ynr.done{border-color:color-mix(in srgb,var(--accent) 55%,var(--card-border))}
+.quiz .ynr p{margin:0;font-size:15.5px;line-height:1.45;flex:1 1 240px}
+.quiz .ynb{display:flex;gap:8px;flex:0 0 auto}
+.quiz .ynb button{font-family:inherit;font-size:14.5px;font-weight:600;padding:8px 18px;border-radius:999px;
+  border:1px solid var(--card-border);background:none;color:var(--muted);cursor:pointer;transition:border-color .15s,background .15s,color .15s}
+.quiz .ynb button:hover{border-color:var(--muted)}
+.quiz .ynb button.on{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--text)}
+.quiz .score{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:12px}
 .quiz .open{margin-top:16px;display:none}
 .quiz .open p{font-size:14.5px;color:var(--muted);margin:0 0 8px}
 .quiz textarea{width:100%;min-height:82px;padding:12px 14px;border:1px solid var(--card-border);border-radius:12px;background:var(--bg);color:var(--text);font-family:inherit;font-size:15.5px;line-height:1.45;resize:vertical}
