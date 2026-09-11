@@ -239,6 +239,11 @@ section{position:relative;padding:clamp(76px,10vw,140px) 0}
   position:relative;padding:0 0 0 26px;margin-bottom:14px;
   color:#cdc6bb;font-size:17px;line-height:1.5
 }
+.cta-mid{margin:54px auto 0;max-width:760px;text-align:center;
+  padding:38px 30px;border:1px solid rgba(201,162,39,.28);border-radius:22px;
+  background:rgba(201,162,39,.04)}
+.cta-mid-note{margin:0 0 22px;color:#cdc6bb;font-size:17px}
+.cta-mid .cta-row{justify-content:center}
 .facts li::before{
   content:"";position:absolute;left:0;top:10px;width:9px;height:9px;
   border-radius:50%;background:var(--gold)
@@ -456,7 +461,12 @@ footer{padding:66px 0 52px;border-top:1px solid rgba(255,255,255,.07);color:var(
   .cases{grid-template-columns:repeat(2,1fr)}
   .btn{padding:17px 30px;font-size:13px;width:100%}
   .cta-row{flex-direction:column;align-items:stretch}
-  .dock{display:none}
+  /* липкая кнопка нужна именно на телефоне: там между призывами
+     получалось больше десяти экранов (замечание Татьяны 11.09) */
+  .dock{display:block;left:12px;right:12px;transform:translate(0,140%)}
+  .dock.on{transform:translate(0,0)}
+  .dock .btn{width:100%}
+  .cta-mid{padding:30px 20px}
 }
 @media (prefers-reduced-motion:reduce){
   .rv{opacity:1;transform:none;transition:none}
@@ -570,6 +580,7 @@ footer{padding:66px 0 52px;border-top:1px solid rgba(255,255,255,.07);color:var(
     <div class="levels rv"><article class="card"><h3>Ты в пересборке смыслов</h3><p>Старое уже не отзывается, новое ещё не собралось. Внутри многое про себя понятно, снаружи пока туман.</p></article>
 <article class="card"><h3>Ты переросла свою деятельность</h3><p>Опыта и энергии достаточно. Не хватает системности и устойчивости, чтобы шагнуть в новое.</p></article>
 <article class="card"><h3>Ты устала учиться</h3><p>Практики, медитации, дыхание, разборы. Материя при этом стоит на месте, и это тебя злит.</p></article></div>
+    <div class="cta-mid rv"><p class="cta-mid-note">22 и 23 сентября, Zoom и закрытый чат. Запись остаётся у тебя.</p><div class="cta-row"><a class="btn" href="https://yookassa.ru/my/i/aqPre98XNe58/l" target="_blank" rel="noopener">Занять место за 1963 ₽</a></div></div>
   </div>
 </section>
 
@@ -596,6 +607,7 @@ footer{padding:66px 0 52px;border-top:1px solid rgba(255,255,255,.07);color:var(
 <div class="step rv"><div class="step-n">04</div><div><h3>Принятие себя и своих выборов</h3><p>Только приняв себя сегодняшнюю, ты честно увидишь, что реально себе позволяешь и что себе запрещаешь.</p></div></div>
 <div class="step rv"><div class="step-n">05</div><div><h3>Техника «Смирительная рубашка»</h3><p>Быстрый сброс сдерживания через тело, тридцать секунд. Работает на саботаже, когда знаешь, что надо сделать, и не идёшь. Забираешь как навык на каждый день.</p></div></div></div>
     <p class="day-out rv">К концу первого дня ты знакомишься с собой настоящей.</p>
+    <div class="cta-mid rv"><p class="cta-mid-note">22 и 23 сентября, Zoom и закрытый чат. Запись остаётся у тебя.</p><div class="cta-row"><a class="btn" href="https://yookassa.ru/my/i/aqPre98XNe58/l" target="_blank" rel="noopener">Занять место за 1963 ₽</a></div></div>
 
     <div class="day-head rv" style="margin-top:70px">
       <span class="day-n">02</span>
@@ -612,6 +624,7 @@ footer{padding:66px 0 52px;border-top:1px solid rgba(255,255,255,.07);color:var(
 <div class="step rv"><div class="step-n">06</div><div><h3>Сила рода</h3><p>Увидеть силу своего рода, снять кандалы, получить внутреннее благословение жить свою жизнь вместо обслуживания родовой программы.</p></div></div>
 <div class="step rv"><div class="step-n">07</div><div><h3>План позволений</h3><p>Цель в отношениях и в деньгах, поставленная из новой себя. Плюс нелинейные маршруты, которые из старой точки просто не видно.</p></div></div></div>
     <p class="day-out rv">К концу второго дня ты видишь ясные свои действия для проявления своей настоящей сути.</p>
+    <div class="cta-mid rv"><p class="cta-mid-note">22 и 23 сентября, Zoom и закрытый чат. Запись остаётся у тебя.</p><div class="cta-row"><a class="btn" href="https://yookassa.ru/my/i/aqPre98XNe58/l" target="_blank" rel="noopener">Занять место за 1963 ₽</a></div></div>
   </div>
 </section>
 
@@ -644,6 +657,7 @@ footer{padding:66px 0 52px;border-top:1px solid rgba(255,255,255,.07);color:var(
 <li>Две рабочие техники, которые остаются в теле, и твоя ведущая роль в проявленности.</li>
 <li>План того, что ты себе теперь позволяешь, и ясные действия для проявления своей настоящей сути.</li></ol>
     <div class="read rv" style="margin-left:0"><p class="mute">Два дня дают разрешение и инструменты. Дальше ты идёшь и делаешь, и это уже твоя часть работы.</p></div>
+    <div class="cta-mid rv"><p class="cta-mid-note">22 и 23 сентября, Zoom и закрытый чат. Запись остаётся у тебя.</p><div class="cta-row"><a class="btn" href="https://yookassa.ru/my/i/aqPre98XNe58/l" target="_blank" rel="noopener">Занять место за 1963 ₽</a></div></div>
   </div>
 </section>
 
@@ -681,6 +695,7 @@ footer{padding:66px 0 52px;border-top:1px solid rgba(255,255,255,.07);color:var(
 <li>Личный кейс: 60 млн рублей чистой прибыли на охватах до 100 человек, без платного трафика.</li>
 <li>Международный спикер, больше 100 выступлений. Учу лидеров продавать со сцены на чеки от 500 тысяч до 1,5 млн рублей.</li>
 <li>IT-предприниматель: создала нейросеть «Эльли», цифровое зеркало для работы с блоками мышления и телесными зажимами за 15 минут.</li></ul>
+      <div class="cta-mid rv"><p class="cta-mid-note">22 и 23 сентября, Zoom и закрытый чат. Запись остаётся у тебя.</p><div class="cta-row"><a class="btn" href="https://yookassa.ru/my/i/aqPre98XNe58/l" target="_blank" rel="noopener">Занять место за 1963 ₽</a></div></div>
     </div>
   </div>
 </section>
