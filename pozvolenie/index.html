@@ -520,6 +520,14 @@ ym(112568432, "init", {clickmap:true, trackLinks:true, accurateTrackBounce:true,
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/112568432" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
+<script>
+document.addEventListener("click", function(e){
+  var a = e.target.closest && e.target.closest("a");
+  if (a && a.textContent.indexOf("Занять место") !== -1 && typeof ym === "function") {
+    ym(112568432, "reachGoal", "pozvolenie_payment_click");
+  }
+}, true);
+</script>
 </head>
 <body>
 <div class="prog"></div>
