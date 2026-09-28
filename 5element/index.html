@@ -71,7 +71,19 @@ section{padding:88px 0}
 .fmt span{border:1px solid var(--line);padding:8px 14px;font-size:14px;background:#fff}
 /* prices */
 .prices{background:var(--ivory)}
-.tariffs{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:36px}
+.tariffs{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px}
+.tariff.rz{background:var(--emer);color:#e9e2d4;border-color:var(--gold2)}
+.tariff.rz li{border-bottom-color:#2c4a42}
+.tariff.rz h4{color:var(--gold2)}
+.res{margin-top:44px}
+.res h3{font:500 32px/1.2 "Cormorant Garamond",serif;margin:6px 0 22px}
+.res-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.res-grid div{background:#fff;border:1px solid var(--line);padding:24px}
+.res-grid h4{margin-bottom:6px}
+.rez .res h3{color:#f4ecdc}
+.rez .res-grid div{background:rgba(201,169,106,.06);border-color:#2c4a42}
+.rez .res-grid h4{color:#f4ecdc}.rez .res-grid p{color:#bdb5a5}
+.more{margin-top:34px}
 .tariff{background:#fff;border:1px solid var(--line);padding:36px;display:flex;flex-direction:column}
 .tariff.vip{border-color:var(--gold)}
 .tariff .price{font:500 50px/1 "Cormorant Garamond",serif;margin:14px 0 22px}
@@ -119,8 +131,8 @@ details p{margin-top:12px;color:#4b4640;max-width:760px}
 .final .steps b{font:500 34px/1 "Cormorant Garamond",serif;color:var(--gold);display:block;margin-bottom:8px}
 .opts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;max-width:720px;margin:0 auto 34px;text-align:left}
 .opts span{border:1px solid var(--line);padding:12px 16px;font-size:15px;background:#fff}
-footer{padding:40px 0;font-size:13px;color:#8a8278;text-align:center;border-top:1px solid var(--line)}
-.dock{position:fixed;left:12px;right:12px;bottom:12px;display:none;z-index:9}
+footer{padding:40px 0 100px;font-size:13px;color:#8a8278;text-align:center;border-top:1px solid var(--line)}
+.dock{position:fixed;left:50%;transform:translateX(-50%);bottom:14px;width:min(420px,calc(100% - 24px));display:block;z-index:9}
 .dock .btn{display:block;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.18)}
 @media(max-width:900px){
  section{padding:64px 0}
@@ -129,7 +141,7 @@ footer{padding:40px 0;font-size:13px;color:#8a8278;text-align:center;border-top:
  .hero img{height:62vh;object-position:50% 30%}
  .hero .txt{padding:34px 0 50px}
  .panel{grid-template-rows:repeat(4,1fr) auto}
- .panel,.tariffs,.author .grid,.rez .top,.final .steps,.opts{grid-template-columns:1fr}
+ .res-grid,.panel,.tariffs,.author .grid,.rez .top,.final .steps,.opts{grid-template-columns:1fr}
  .formula{grid-template-columns:1fr 1fr;gap:0 16px}
  .formula div:after{display:none}
  .step{grid-template-columns:48px 1fr;gap:6px 14px}
@@ -183,38 +195,47 @@ footer{padding:40px 0;font-size:13px;color:#8a8278;text-align:center;border-top:
  <h2>5 ЭЛЕМЕНТ</h2>
  <p class="lead">Полная пересборка женской чувственности. Право хотеть, получать удовольствие, проявляться и принимать изобилие.</p>
  <div class="fmt"><span>4 недели онлайн-погружения</span><span>3 дня выезда в Подмосковье</span></div>
- <div class="route"><div class="step"><div class="n">1</div><div class="el">Земля<small>Тело и опора</small></div><p>Снимаем мышечный панцирь, заземляемся. Уходит страх нищеты и ощущение, что мир небезопасен.</p></div><div class="step"><div class="n">2</div><div class="el">Вода<small>Чувственность и секс</small></div><p>Размораживаем подавленную энергию. Возвращается оргазмичность и право на удовольствие без стыда и вины.</p></div><div class="step"><div class="n">3</div><div class="el">Огонь<small>Право звучать</small></div><p>Освобождаем голос, снимаем страх осуждения. Выходишь в публичность спокойно, колени больше не дрожат.</p></div><div class="step"><div class="n">4</div><div class="el">Воздух<small>Отношения нового уровня</small></div><p>Выходишь из треугольника драмы и спасательства в союз из целостности, где тебя выбирают и балуют.</p></div><div class="step off"><div class="n">✦</div><div class="el">Выезд<small>3 дня в Подмосковье</small></div><p>Живая инициация. Глубокие телесные и квантовые процессы, круг женской силы, новое состояние закрепляется в теле.</p></div><div class="step"><div class="n">5</div><div class="el">Эфир<small>Реалити «Деньги нового времени», 2 недели</small></div><p>Собираешь предложения из новой себя, создаёшь первые сочные продукты, новое состояние начинает приносить деньги.</p></div></div>
+ <div class="route"><div class="step"><div class="n">1</div><div class="el">Земля<small>Тело и опора</small></div><p>Снимаем мышечный панцирь, заземляемся. Уходит страх нищеты и ощущение, что мир небезопасен.</p></div><div class="step"><div class="n">2</div><div class="el">Вода<small>Чувственность и секс</small></div><p>Размораживаем подавленную энергию. Возвращается оргазмичность и право на удовольствие без стыда и вины.</p></div><div class="step"><div class="n">3</div><div class="el">Огонь<small>Право звучать</small></div><p>Освобождаем голос, снимаем страх осуждения. Выходишь в публичность спокойно, колени больше не дрожат.</p></div><div class="step"><div class="n">4</div><div class="el">Воздух<small>Отношения нового уровня</small></div><p>Выходишь из треугольника драмы и спасательства в союз из целостности, где тебя выбирают и балуют.</p></div><div class="step"><div class="n">5</div><div class="el">Выезд<small>3 дня в Подмосковье</small></div><p>Живая инициация. Глубокие телесные и квантовые процессы, круг женской силы, новое состояние закрепляется в теле.</p></div></div>
+ <div class="res"><p class="kick">Результаты</p><h3>Что меняется после «5 Элемента»</h3><div class="res-grid"><div><h4>Тело отпускает</h4><p>Уходят ком в горле и спазмы. Появляется опора и спокойствие, для которых больше не нужны бокал и сериал.</p></div><div><h4>Чувственность возвращается</h4><p>Удовольствие, оргазмичность и право хотеть без стыда и вины.</p></div><div><h4>Голос звучит</h4><p>Выходишь к людям и в камеру спокойно и говоришь то, что думаешь.</p></div><div><h4>Отношения из целостности</h4><p>Роль спасательницы уходит. Рядом появляется союз, где тебя выбирают и балуют.</p></div></div></div>
+ <div class="more"><a class="btn" href="#tarify">Узнать тарифы</a></div>
 </div></section>
 
-<section class="prices"><div class="wrap">
- <p class="kick">Участие в «5 Элементе»</p>
- <h2>Два формата</h2>
- <div class="tariffs">
-  <div class="tariff"><h4>Базовый</h4><div class="price">120 000 ₽</div><ul>
-   <li>4 недели онлайн-модулей</li><li>3 дня офлайн-выезда в Подмосковье: практики и трансформация</li>
-   <li>Общий групповой чат и кураторы</li><li>Доступ к записям и практикам</li></ul>
-   <a class="btn" href="https://t.me/koryaginakate_bot?start=anketa5" target="_blank" rel="noopener" data-goal="5el_base">Забронировать за 120 000 ₽</a></div>
-  <div class="tariff vip"><h4>VIP с личными сессиями</h4><div class="price">250 000 ₽</div><ul>
-   <li>Всё из Базового тарифа</li><li>3 персональные глубокие сессии с Екатериной</li>
-   <li>Личный аудит телесных и ментальных зажимов до старта</li><li>Индивидуальное ведение на выезде</li>
-   <li>Закрытый мини-чат с Екатериной</li></ul>
-   <p class="lim">Строго до 5 мест</p><a class="btn" href="https://t.me/koryaginakate_bot?start=anketa5" target="_blank" rel="noopener" data-goal="5el_vip">Подать заявку на VIP</a></div>
- </div>
- <p class="note">Проживание и питание на выезде согласуем при подтверждении брони.</p>
-</div></section>
 
 <section class="rez" id="rezonans"><div class="wrap"><div class="box">
  <span class="badge">Флагманское бизнес-наставничество</span>
  <div class="top"><div>
   <p class="kick" style="color:#c9a96a">Отдельная программа для экспертов, авторов и предпринимательниц</p>
   <h2><em>РЕЗОНАНС.</em> Твоя сила в дорогих продуктах, системных продажах и капитале личного бренда</h2>
-  <div class="meta"><div><b>350 000 ₽</b>стоимость</div><div><b>10–12 недель</b>персонально-групповой трек</div></div>
+  <div class="meta"><div><b>10–12 недель</b>персонально-групповой трек</div><div><b>+ 5 Элемент</b>включён в программу</div></div>
  </div><img src="img/rez.jpg" alt="Екатерина Корягина" loading="lazy"></div>
- <p class="who" style="margin-top:26px">Сюда можно зайти сразу, минуя «5 Элемент», если твой запрос про масштаб в деньгах, продуктовую линейку, влияние и высокий чек.</p>
- <ol><li><h4>Твоя сила в дорогом продукте</h4><p>Распаковываем подлинный масштаб личности и собираем премиальный продукт от 100 000 до 1 000 000 ₽. Его покупают за твою частоту и глубину ценности.</p></li><li><h4>Продажи из резонанса</h4><p>Уходишь из «купите, пожалуйста» в позицию Автора. Клиенты приходят на твою целостность, ясные границы и понятный результат. Без впаривания и манипуляций.</p></li><li><h4>Проявленность и влияние</h4><p>Виральный и авторитетный контент: Reels, Telegram, выступления. Выходишь из тени и собираешь платёжеспособную аудиторию, которая ждёт именно твоих продуктов.</p></li><li><h4>Личный капитал</h4><p>Финансовая архитектура: как не сливать заработанное, переводить доход от запусков в активы, строить повторные продажи и держать высокий уровень жизни без выгорания.</p></li><li><h4>Реалити «Деньги нового времени», 2 недели</h4><p>Собираешь предложения из новой себя, создаёшь первые сочные продукты, новое состояние начинает приносить деньги.</p></li><li><h4>Личная докрутка с Екатериной</h4><p>Стратегические сессии, разбор воронки и офферов, калибровка внутренних программ, которые держат твой чек внизу.</p></li></ol>
- <p class="sel">Строгий отбор. Не более 7–10 участниц в потоке</p>
- <a class="btn gold" href="https://t.me/koryaginakate_bot?start=anketa5" target="_blank" rel="noopener" data-goal="rez_interview">Записаться на интервью в «Резонанс»</a>
+ <p class="who" style="margin-top:26px">Программа «5 Элемент» уже включена. Твой запрос здесь про масштаб в деньгах, продуктовую линейку, влияние и высокий чек.</p>
+ <ol><li><h4>Твоя сила в дорогом продукте</h4><p>Распаковываем подлинный масштаб личности и собираем премиальный продукт от 100 000 до 1 000 000 ₽. Его покупают за твою частоту и глубину ценности.</p></li><li><h4>Продажи из резонанса</h4><p>Уходишь из «купите, пожалуйста» в позицию Автора. Клиенты приходят на твою целостность, ясные границы и понятный результат. Без впаривания и манипуляций.</p></li><li><h4>Проявленность и влияние</h4><p>Виральный и авторитетный контент: Reels, Telegram, выступления. Выходишь из тени и собираешь платёжеспособную аудиторию, которая ждёт именно твоих продуктов.</p></li><li><h4>Личный капитал</h4><p>Финансовая архитектура: как не сливать заработанное, переводить доход от запусков в активы, строить повторные продажи и держать высокий уровень жизни без выгорания.</p></li><li><h4>Реалити «Деньги нового времени», 2 недели</h4><p>Собираешь предложения из новой себя, создаёшь первые сочные продукты, новое состояние начинает приносить деньги.</p></li><li><h4>Формулы роста аудитории и продажи через ИИ-ассистентов</h4><p>Формулы, по которым растёт твоя аудитория, и ИИ-ассистенты, которые ведут диалог с клиентом и доводят его до заявки, пока ты занимаешься своим делом.</p></li><li><h4>Личная докрутка с Екатериной</h4><p>Стратегические сессии, разбор воронки и офферов, калибровка внутренних программ, которые держат твой чек внизу.</p></li></ol>
+ <div class="res"><p class="kick" style="color:#c9a96a">Результаты</p><h3>Что меняется после «Резонанса»</h3><div class="res-grid"><div><h4>Флагманский продукт</h4><p>Премиальный продукт от 100 000 ₽, который покупают за твою глубину и частоту.</p></div><div><h4>Системные продажи</h4><p>Заявки приходят из контента и воронки, без хаотичных запусков и уговоров.</p></div><div><h4>Своя аудитория</h4><p>Платёжеспособные люди, которые ждут именно твоих продуктов, и ИИ-ассистенты, которые с ними работают.</p></div><div><h4>Капитал и лёгкость</h4><p>Доход переходит в активы, уровень жизни растёт без выгорания. И всё, что даёт «5 Элемент», тоже с тобой.</p></div></div></div>
+ <p class="sel" style="margin-top:34px">Строгий отбор. Не более 7–10 участниц в потоке</p>
+ <a class="btn gold" href="#tarify">Узнать тарифы</a>
 </div></div></section>
+
+<section class="prices" id="tarify"><div class="wrap">
+ <p class="kick">Тарифы</p>
+ <h2>Выбери свой формат</h2>
+ <div class="tariffs">
+  <div class="tariff"><h4>5 Элемент · Базовый</h4><div class="price">120 000 ₽</div><ul>
+   <li>4 недели онлайн-модулей</li><li>3 дня офлайн-выезда в Подмосковье: практики и трансформация</li>
+   <li>Общий групповой чат и кураторы</li><li>Доступ к записям и практикам</li></ul>
+   <a class="btn" href="https://t.me/koryaginakate_bot?start=anketa5" target="_blank" rel="noopener" data-goal="5el_base">Забронировать за 20&nbsp;000&nbsp;₽</a></div>
+  <div class="tariff vip"><h4>5 Элемент · VIP с личными сессиями</h4><div class="price">250 000 ₽</div><ul>
+   <li>Всё из Базового тарифа</li><li>3 персональные телесно-энергетические сессии</li>
+   <li>Личный аудит телесных и ментальных зажимов до старта</li><li>Индивидуальная телесная сессия на выезде</li>
+   <li>Закрытый мини-чат с Екатериной</li></ul>
+   <p class="lim">Строго до 5 мест</p><a class="btn" href="https://t.me/koryaginakate_bot?start=anketa5" target="_blank" rel="noopener" data-goal="5el_vip">Подать заявку на VIP</a></div>
+  <div class="tariff rz"><h4>Резонанс</h4><div class="price">350 000 ₽</div><ul>
+   <li>Программа «5 Элемент» включена</li><li>10–12 недель персонально-группового трека</li>
+   <li>Дорогой продукт, продажи из резонанса, личный бренд</li><li>Реалити «Деньги нового времени», 2 недели</li>
+   <li>Формулы роста аудитории и продажи через ИИ-ассистентов</li><li>Личная докрутка с Екатериной</li></ul>
+   <p class="lim">Не более 7–10 участниц в потоке</p><a class="btn gold" href="https://t.me/koryaginakate_bot?start=anketa5" target="_blank" rel="noopener" data-goal="rez_interview">Записаться на интервью</a></div>
+ </div>
+ <p class="note">Проживание и питание на выезде согласуем при подтверждении брони.</p>
+</div></section>
 
 <section class="author" id="author"><div class="wrap grid">
  <figure><img src="img/author.jpg" alt="Екатерина Корягина" loading="lazy"></figure>
@@ -228,7 +249,7 @@ footer{padding:40px 0;font-size:13px;color:#8a8278;text-align:center;border-top:
 </div></section>
 
 <section class="faq"><div class="wrap">
- <p class="kick">Вопросы</p><h2>Частые вопросы</h2><details><summary>Можно пойти сразу в «Резонанс», без «5 Элемента»?</summary><p>Да. «Резонанс» это самостоятельная программа для тех, кто готов сразу строить бизнес, запускать дорогой продукт и упаковывать личный бренд. Если запрос про телесное освобождение и женскую чувственность, начинай с «5 Элемента».</p></details><details><summary>Боюсь, что не получится приехать на 3 дня в Подмосковье.</summary><p>Выезд это ключевая точка сборки в «5 Элементе». Локация в удобной транспортной доступности. Детали заезда и трансфера куратор даст сразу после одобрения анкеты.</p></details><details><summary>Можно оплатить частями?</summary><p>Да, условия оплаты частями обсуждаем на собеседовании, когда подтверждаем тариф.</p></details><details><summary>Что будет после нажатия на кнопку?</summary><p>Откроется бот, он задаст 5 коротких вопросов анкеты. Екатерина или координатор напишет тебе в Telegram, уточнит запрос, готовность к работе и подтвердит тариф.</p></details>
+ <p class="kick">Вопросы</p><h2>Частые вопросы</h2><details><summary>Можно пойти сразу в «Резонанс», без «5 Элемента»?</summary><p>Да. Программа «5 Элемент» уже включена в «Резонанс», отдельно проходить её не нужно. Если твой запрос только про тело и женскую чувственность, начинай с «5 Элемента».</p></details><details><summary>Боюсь, что не получится приехать на 3 дня в Подмосковье.</summary><p>Выезд это ключевая точка сборки в «5 Элементе». Локация в удобной транспортной доступности. Детали заезда и трансфера куратор даст сразу после одобрения анкеты.</p></details><details><summary>Можно оплатить частями?</summary><p>Да, условия оплаты частями обсуждаем на собеседовании, когда подтверждаем тариф.</p></details><details><summary>Что будет после нажатия на кнопку?</summary><p>Откроется бот, он задаст 5 коротких вопросов анкеты. Екатерина или координатор напишет тебе в Telegram, уточнит запрос, готовность к работе и подтвердит тариф.</p></details>
 </div></section>
 
 <section class="final" id="anketa"><div class="wrap">
@@ -242,7 +263,7 @@ footer{padding:40px 0;font-size:13px;color:#8a8278;text-align:center;border-top:
 </div></section>
 
 <footer>© Екатерина Корягина · <a href="https://katekoryagina.ru/" style="color:inherit">katekoryagina.ru</a></footer>
-<div class="dock"><a class="btn" href="https://t.me/koryaginakate_bot?start=anketa5" target="_blank" rel="noopener" data-goal="dock_anketa">Заполнить анкету</a></div>
+<div class="dock"><a class="btn" href="https://t.me/koryaginakate_bot?start=anketa5" target="_blank" rel="noopener" data-goal="dock_anketa">Подать заявку</a></div>
 
 <script>
 document.querySelectorAll('.tabs button').forEach(function(b){b.addEventListener('click',function(){
