@@ -1,0 +1,882 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Куб Высшей Миссии · Екатерина Корягина</title>
+<meta name="description" content="В дате твоего рождения уже записан код твоего масштаба. Рассчитай свой Куб Высшей Миссии за 3 минуты: проявление, поток, большие деньги и союз.">
+<meta property="og:title" content="Куб Высшей Миссии">
+<meta property="og:description" content="В дате твоего рождения уже записан код твоего масштаба. Рассчитай свой Куб за 3 минуты в Telegram.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://katekoryagina.ru/kub/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://katekoryagina.ru/kub/">
+<meta property="og:site_name" content="Екатерина Корягина">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Куб Высшей Миссии">
+<meta name="twitter:description" content="Код твоего масштаба в дате рождения. Расчёт за 3 минуты.">
+<meta name="twitter:image" content="https://katekoryagina.ru/kub/img/og.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230b0a09'/><text x='16' y='23' font-family='Georgia,serif' font-size='19' fill='%23c6a05a' text-anchor='middle'>К</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Inter+Tight:wght@500;600;700&family=JetBrains+Mono:wght@400;500&family=PT+Serif:ital,wght@0,400;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:#0b0f0c;color:#ffffff;
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:19px;font-weight:300;line-height:1.75;letter-spacing:.005em;
+  overflow-x:hidden;
+}
+body::before{
+  content:'';position:fixed;inset:0;z-index:2;pointer-events:none;
+  background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");opacity:.045;mix-blend-mode:overlay;
+}
+/* Во встроенном браузере Telegram фиксированный слой с блендом пересчитывается на каждом
+   кадре прокрутки, и страница начинает дёргаться. На сенсорных экранах зерно кладём
+   обычным слоем поверх страницы: выглядит так же, а прокрутка остаётся гладкой */
+@media (hover:none){
+  body::before{position:absolute;top:0;left:0;width:100%;height:100%;
+    mix-blend-mode:normal;opacity:.03}
+  /* размытие ореола под портретом телефон пересчитывает на каждом кадре: градиент
+     сам по себе мягкий, разницы в картинке нет, а прокрутка перестаёт спотыкаться */
+  .hero-figure::after{filter:none}
+}
+/* height:auto обязателен рядом с атрибутами width/height в разметке, иначе картинка
+   тянется до своей настоящей высоты и ломает пропорции */
+img{max-width:100%;display:block;height:auto}
+a{color:inherit}
+/* заголовки разбиваются на ровные строки, в абзацах последняя строка не остаётся
+   из одного слова. Браузеры без поддержки просто переносят как раньше */
+h1,h2,.pull,.price-hero,.story-sum,.qmark{text-wrap:balance}
+h3{text-wrap:pretty}
+p,li,.result,.story-niche{text-wrap:pretty}
+
+:root{
+  --gold:#c9a227; --gold-lt:#ecd9a1; --cream:#ffffff; --mute:#9ca3af;
+  --ink:#0f1a12; --line:rgba(201,162,39,.22);
+  --wrap:1180px; --read:720px;
+  /* Гарнитуры взяты с живого сайта клиента katekoryagina.ru (design.md, раздел 3):
+     заголовки Inter Tight, тело Inter, цитаты PT Serif курсивом, служебные строки
+     JetBrains Mono. Человек приходит сюда с гайда того же сайта, набор совпадает. */
+  --serif:'Inter Tight','Inter',system-ui,sans-serif;
+  --quote:'PT Serif',Georgia,serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+}
+
+.wrap{width:min(100% - 44px,var(--wrap));margin-inline:auto}
+.read{width:min(100% - 44px,var(--read));margin-inline:auto}
+
+h1,h2,h3,.disp{
+  font-family:var(--serif);font-weight:600;
+  letter-spacing:-.015em;line-height:1.08;margin:0;
+}
+h2{font-size:clamp(30px,4.4vw,52px);line-height:1.17}
+h3{font-size:clamp(21px,2.2vw,26px);line-height:1.25}
+p{margin:0 0 1.35em}
+strong,b{font-weight:600}
+
+.kicker{
+  font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--gold);margin:0 0 22px
+}
+.eyebrow{
+  font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--mute);margin:0 0 18px
+}
+.lead{font-size:clamp(20px,2vw,23px);line-height:1.65;color:#f2f2f3}
+.mute{color:var(--mute)}
+
+/* ---------- sections ---------- */
+section{position:relative;padding:clamp(76px,10vw,140px) 0}
+.sec-line{height:1px;border:0;margin:0;
+  background:linear-gradient(90deg,transparent,rgba(201,162,39,.34),transparent)}
+.panel{background:linear-gradient(180deg,#0b0f0c,#0f1a12)}
+
+/* ---------- hero ---------- */
+.hero{
+  min-height:100svh;display:flex;align-items:center;padding:96px 0 72px;
+  background:
+    radial-gradient(120% 90% at 78% 26%,rgba(201,162,39,.20),transparent 58%),
+    radial-gradient(90% 70% at 8% 88%,rgba(201,162,39,.07),transparent 60%),
+    #0b0f0c;
+  overflow:hidden;
+}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(24px,5vw,80px);align-items:center}
+/* первый экран это фотобаннер клиента: заголовок и кикер запечены в картинку
+   (решение Екатерины 05.08), поэтому текстовый h1 остаётся только для поиска */
+.hero-b{min-height:auto;align-items:flex-start;padding:64px 0 72px}
+.hero-banner{position:relative;margin:0}
+.hero-banner img{width:100%;display:block;border-radius:3px;position:relative;z-index:1}
+.hero-banner::before{
+  content:'';position:absolute;inset:18px -18px -18px 18px;z-index:0;
+  border:1px solid rgba(201,162,39,.42);border-radius:3px;
+}
+.hero-under{max-width:44ch;margin-top:44px}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;
+  clip:rect(0 0 0 0);white-space:nowrap;border:0}
+/* кегль подобран под ДОСЛОВНУЮ шапку клиента (она длиннее слогана), чтобы первый экран
+   вмещал заголовок, лид и кнопку целиком */
+.hero h1{font-size:clamp(30px,3.9vw,52px);line-height:1.12;margin:0 0 22px}
+/* ёлочки в антикве идут с широкими боковыми полями и разъезжаются. Inter Tight
+   этим не страдает, классы оставлены нейтральными на случай смены гарнитуры */
+.q{letter-spacing:0}
+.hero .lead{max-width:34ch}
+.hero-note{font-size:14px;color:var(--mute);letter-spacing:.02em;margin-top:18px}
+.hero-figure{position:relative}
+.hero-figure::after{
+  content:'';position:absolute;inset:-14% -10% -6% -10%;z-index:-1;
+  background:radial-gradient(60% 55% at 50% 42%,rgba(201,162,39,.28),transparent 70%);
+  filter:blur(18px);
+}
+.hero-figure img{width:100%;border-radius:2px;position:relative;z-index:1}
+.hero-figure::before{
+  content:'';position:absolute;inset:22px -22px -22px 22px;border:1px solid rgba(201,162,39,.42);
+  border-radius:2px;z-index:0
+}
+.hero-figure figcaption{
+  position:absolute;left:0;right:0;bottom:-1px;height:34%;z-index:2;pointer-events:none;
+  background:linear-gradient(180deg,transparent,rgba(7,7,8,.85))
+}
+.scroll-hint{
+  margin-top:56px;font-size:11.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--mute);
+  display:flex;align-items:center;gap:12px
+}
+.scroll-hint span{display:block;width:56px;height:1px;background:linear-gradient(90deg,var(--gold),transparent)}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  padding:19px 44px;border-radius:999px;text-decoration:none;
+  font-family:'Inter',sans-serif;font-size:14.5px;font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;color:#141008;
+  background:linear-gradient(100deg,#a8841f,#ecd9a1 46%,#c9a227);
+  box-shadow:0 18px 44px -20px rgba(201,162,39,.85);
+  position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.2,.7,.3,1),box-shadow .35s
+}
+.btn::after{
+  content:'';position:absolute;top:0;bottom:0;left:-70%;width:45%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);
+  transform:skewX(-18deg);transition:left .6s ease
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 24px 56px -20px rgba(201,162,39,.95)}
+.btn:hover::after{left:130%}
+.btn-ghost{
+  background:none;color:var(--gold-lt);border:1px solid var(--line);box-shadow:none
+}
+.btn-ghost:hover{border-color:rgba(242,220,166,.6);box-shadow:none}
+.cta-row{display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin-top:34px}
+
+/* ---------- longread ---------- */
+.read p{color:#e3e3e5}
+.read .first::first-letter{
+  font-family:var(--serif);float:left;font-size:76px;line-height:.82;
+  padding:6px 14px 0 0;color:var(--gold)
+}
+.qmark{
+  font-family:var(--serif);font-size:clamp(34px,5vw,58px);color:var(--gold-lt);
+  text-align:center;margin:14px 0 0
+}
+.pull{
+  margin:clamp(44px,6vw,72px) auto;text-align:center;max-width:26ch;
+  font-family:var(--quote);font-style:italic;font-size:clamp(26px,3.2vw,40px);
+  line-height:1.3;color:#f7f1e6
+}
+.pull::before,.pull::after{
+  content:'';display:block;width:64px;height:1px;margin:26px auto;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent)
+}
+.loops{list-style:none;margin:0 0 2em;padding:0;counter-reset:l}
+.loops li{
+  position:relative;padding:20px 0 20px 62px;border-bottom:1px solid rgba(255,255,255,.06);
+  color:#ded7cb
+}
+.loops li::before{
+  counter-increment:l;content:counter(l,decimal-leading-zero);
+  position:absolute;left:0;top:22px;font-family:var(--serif);font-size:20px;color:var(--gold)
+}
+
+/* ---------- author ---------- */
+.author-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,5vw,72px);align-items:center}
+.author-figure{position:relative}
+.author-figure img{width:100%;border-radius:3px;filter:saturate(.96)}
+.author-figure::before{
+  content:'';position:absolute;inset:16px -16px -16px 16px;border:1px solid var(--line);z-index:-1
+}
+
+/* ---------- levels / steps ---------- */
+.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:44px 0 0}
+.card{
+  padding:34px 30px;background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));
+  border:1px solid rgba(255,255,255,.07);border-radius:3px;position:relative;overflow:hidden
+}
+.card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(201,162,39,.55),transparent)
+}
+.card h3{margin-bottom:12px}
+.card p{margin:0;font-size:17px;color:#cdc6bb}
+
+.steps{margin:54px 0 0;border-top:1px solid rgba(255,255,255,.08)}
+.step{
+  display:grid;grid-template-columns:96px 1fr;gap:clamp(16px,3vw,40px);
+  padding:34px 0;border-bottom:1px solid rgba(255,255,255,.08);align-items:start
+}
+.step-n{font-family:var(--serif);font-size:44px;color:var(--gold);line-height:1}
+.step h3{margin-bottom:10px}
+.step p{margin:0;color:#cdc6bb;font-size:17.5px}
+
+/* ---------- results / cases ---------- */
+.results{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:0 0 20px}
+.results.two{grid-template-columns:repeat(2,1fr);max-width:900px}
+.takes{max-width:900px}
+.takes li{font-size:18px}
+.facts{list-style:none;margin:30px 0 0;padding:0}
+.facts li{
+  position:relative;padding:0 0 0 26px;margin-bottom:14px;
+  color:#cdc6bb;font-size:17px;line-height:1.5
+}
+.cta-mid{margin:54px auto 0;max-width:760px;text-align:center;
+  padding:38px 30px;border:1px solid rgba(201,162,39,.28);border-radius:22px;
+  background:rgba(201,162,39,.04)}
+.cta-mid-note{margin:0 0 22px;color:#cdc6bb;font-size:17px}
+.cta-mid .cta-row{justify-content:center}
+.facts li::before{
+  content:"";position:absolute;left:0;top:10px;width:9px;height:9px;
+  border-radius:50%;background:var(--gold)
+}
+.result{
+  padding:30px 26px;border-left:1px solid var(--line);font-size:17.5px;color:#ded7cb;line-height:1.65
+}
+.cases{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(18px,3vw,38px) 18px;margin:56px 0 0
+}
+.case{text-align:center}
+.case img{
+  width:clamp(76px,9vw,124px);aspect-ratio:1;border-radius:50%;object-fit:cover;margin:0 auto 14px;
+  border:1px solid rgba(201,162,39,.35);
+  box-shadow:0 0 0 6px rgba(201,162,39,.05);transition:transform .4s,box-shadow .4s
+}
+.case:hover img{transform:translateY(-4px);box-shadow:0 0 0 8px rgba(201,162,39,.12)}
+.case b{display:block;font-size:13px;font-weight:500;color:var(--mute);letter-spacing:.02em}
+.case span{display:block;margin-top:5px;font-size:15.5px;font-weight:600;color:var(--gold-lt)}
+
+/* ---------- slider ---------- */
+.rail{
+  display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;
+  padding:8px 0 26px;margin-top:44px;scrollbar-width:thin;scrollbar-color:rgba(201,162,39,.4) transparent
+}
+.rail::-webkit-scrollbar{height:3px}
+.rail::-webkit-scrollbar-thumb{background:rgba(201,162,39,.4)}
+.rail img{
+  flex:0 0 min(78vw,470px);scroll-snap-align:center;border-radius:3px;
+  border:1px solid rgba(255,255,255,.07)
+}
+.rail.reviews img{flex:0 0 min(64vw,318px);border-radius:14px}
+
+/* ---------- story cards ---------- */
+.story{
+  flex:0 0 min(84vw,430px);scroll-snap-align:center;display:flex;flex-direction:column;
+  padding:32px 30px 34px;border:1px solid rgba(255,255,255,.08);border-radius:4px;
+  background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.012));
+  position:relative;overflow:hidden
+}
+.story::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(201,162,39,.5),transparent)
+}
+.story-top{display:flex;gap:16px;align-items:center;margin-bottom:22px}
+.story-top img{
+  width:66px;height:66px;border-radius:50%;object-fit:cover;flex:0 0 auto;
+  border:1px solid rgba(201,162,39,.4)
+}
+.story-top h3{font-size:21px;margin-bottom:4px}
+.story-niche{margin:0;font-size:13px;color:var(--mute);line-height:1.4}
+.story-handle{margin:3px 0 0;font-size:12.5px;color:rgba(242,220,166,.75);letter-spacing:.04em}
+.story-sum{
+  font-family:var(--serif);font-size:30px;color:var(--gold-lt);margin:0 0 24px;
+  letter-spacing:.01em
+}
+.story-lbl{
+  margin:0 0 10px;font-size:11px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--mute)
+}
+.story-lbl.gold{color:var(--gold)}
+.story-col+.story-col{margin-top:22px;padding-top:22px;border-top:1px solid rgba(255,255,255,.07)}
+.story ul{list-style:none;margin:0;padding:0}
+.story li{
+  position:relative;padding:0 0 9px 24px;font-size:15.5px;line-height:1.55;color:#cdc6bb
+}
+.story li::before{position:absolute;left:0;top:0;font-size:13px}
+.story-a li::before{content:'✕';color:#8a4a44}
+.story-b li::before{content:'✓';color:#7fa06a}
+.rail-hint{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);margin-top:6px}
+/* кнопка раскрытия историй живёт только на телефоне */
+.more-btn{
+  display:none;width:100%;margin-top:20px;padding:16px 22px;font:inherit;font-size:13px;
+  font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-lt);
+  background:rgba(201,162,39,.06);border:1px solid rgba(201,162,39,.32);border-radius:3px;
+  cursor:pointer;transition:background .3s ease,border-color .3s ease
+}
+.more-btn:hover{background:rgba(201,162,39,.12);border-color:rgba(201,162,39,.55)}
+
+/* ---------- fears ---------- */
+.fears{display:grid;gap:18px;margin-top:46px}
+.fear{
+  padding:32px 34px;border:1px solid rgba(255,255,255,.08);border-radius:3px;
+  background:linear-gradient(180deg,rgba(255,255,255,.03),transparent)
+}
+.fear h3{color:#f7f1e6;margin-bottom:12px;font-size:clamp(19px,2vw,23px)}
+.fear p{margin:0;color:#cdc6bb;font-size:17.5px}
+
+/* ---------- price ---------- */
+.price-hero{
+  font-family:var(--serif);font-size:clamp(26px,3.4vw,40px);line-height:1.25;
+  color:#f7f1e6;margin:0 0 34px
+}
+.price-hero em{font-style:normal;color:var(--gold-lt)}
+
+/* ---------- final ---------- */
+.final{
+  text-align:center;
+  background:
+    radial-gradient(90% 70% at 50% 0%,rgba(201,162,39,.18),transparent 62%),
+    linear-gradient(180deg,#0f1a12,#0b0f0c);
+}
+.final h2{margin-bottom:30px}
+.final .read p{color:#ded7cb}
+.sign{
+  font-family:var(--serif);font-size:clamp(22px,2.6vw,30px);color:#f7f1e6;
+  margin-top:40px;line-height:1.4
+}
+
+/* ---------- sticky cta ---------- */
+.dock{
+  position:fixed;left:50%;bottom:22px;transform:translate(-50%,140%);z-index:5;
+  transition:transform .5s cubic-bezier(.2,.7,.3,1);
+}
+.dock.on{transform:translate(-50%,0)}
+.dock .btn{padding:16px 34px;font-size:13px}
+
+/* ---------- footer ---------- */
+footer{padding:66px 0 52px;border-top:1px solid rgba(255,255,255,.07);color:var(--mute);font-size:14px}
+.foot-grid{display:flex;flex-wrap:wrap;gap:18px 40px;justify-content:space-between;align-items:baseline}
+.foot-name{font-family:var(--serif);font-size:20px;color:var(--cream)}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+
+/* ---------- reading progress ---------- */
+.prog{
+  position:fixed;top:0;left:0;height:2px;width:0;z-index:9;pointer-events:none;
+  background:linear-gradient(90deg,rgba(198,160,90,.25),var(--gold));
+  box-shadow:0 0 14px rgba(198,160,90,.55);transition:width .12s linear;
+}
+
+/* ---------- hero parallax ---------- */
+.hero-figure{will-change:transform}
+
+/* ---------- card lift ---------- */
+.card,.story,.case{transition:transform .45s cubic-bezier(.2,.7,.3,1),box-shadow .45s ease,border-color .45s ease}
+.card:hover,.story:hover{
+  transform:translateY(-6px);border-color:rgba(198,160,90,.42);
+  box-shadow:0 18px 46px rgba(0,0,0,.55),0 0 0 1px rgba(198,160,90,.16) inset;
+}
+.case:hover{transform:translateY(-4px)}
+.case img{transition:box-shadow .45s ease,filter .45s ease}
+.case:hover img{box-shadow:0 0 0 2px rgba(198,160,90,.5),0 14px 30px rgba(0,0,0,.5);filter:saturate(1.06)}
+
+/* ---------- draggable rails ---------- */
+.rail{cursor:grab}
+.rail.dragging{cursor:grabbing;scroll-snap-type:none}
+.rail.dragging *{pointer-events:none}
+.rail.reviews img{cursor:zoom-in}
+
+/* ---------- review lightbox ---------- */
+.lb{
+  position:fixed;inset:0;z-index:20;display:none;place-items:center;padding:26px;
+  background:rgba(4,4,6,.92);backdrop-filter:blur(6px);opacity:0;transition:opacity .3s ease;
+}
+.lb.on{display:grid;opacity:1}
+.lb img{max-width:min(92vw,560px);max-height:88vh;border-radius:16px;box-shadow:0 30px 90px rgba(0,0,0,.7)}
+.lb-x{
+  position:absolute;top:20px;right:24px;width:42px;height:42px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.22);background:rgba(0,0,0,.35);color:#f5efe4;
+  font-size:20px;line-height:40px;text-align:center;cursor:pointer;
+}
+.lb-nav{
+  position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.35);color:#f5efe4;
+  font-size:22px;line-height:44px;text-align:center;cursor:pointer;user-select:none;
+}
+.lb-prev{left:16px} .lb-next{right:16px}
+
+/* ---------- breathing cta ---------- */
+@keyframes breathe{
+  0%,100%{box-shadow:0 10px 30px rgba(0,0,0,.45),0 0 0 0 rgba(198,160,90,.34)}
+  50%{box-shadow:0 10px 34px rgba(0,0,0,.5),0 0 34px 6px rgba(198,160,90,.22)}
+}
+.dock .btn{animation:breathe 3.4s ease-in-out infinite}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  body{font-size:17.5px}
+  .hero{min-height:auto;padding:84px 0 56px}
+  .hero-grid,.author-grid{grid-template-columns:1fr;gap:34px}
+  /* портрет не должен съедать первый экран: хук обязан быть виден сразу, без прокрутки */
+  .hero-figure{order:-1;max-width:300px;margin-inline:auto}
+  .hero-b{padding:64px 0 48px}
+  .hero-banner::before{inset:12px -12px -12px 12px}
+  .hero-under{margin-top:34px}
+  .hero-figure img{max-height:38svh;object-fit:cover;object-position:50% 12%}
+  /* на 430px капитель антиквы упиралась в оба края экрана, поэтому цитата тут мельче и уже */
+  .pull{font-size:26px;max-width:17ch}
+  .levels,.results{grid-template-columns:1fr}
+  .cases{grid-template-columns:repeat(3,1fr)}
+  /* карточки историй по своему содержанию, иначе короткая тянется до высоты самой длинной */
+  .rail{align-items:flex-start}
+  /* На телефоне в кадре одна история, а высота ленты равна самой длинной карточке, поэтому под
+     короткой зияло до 316px пустого фона. Горизонталь тут не лечится выравниванием, поэтому
+     истории раскладываем в столбик: и дыра уходит, и вертикальная прокрутка привычнее пальцу.
+     Первые три открыты, остальные под кнопкой, чтобы страница не выросла на пять экранов. */
+  .rail.stories{
+    display:grid;grid-auto-flow:row;gap:18px;overflow:visible;scroll-snap-type:none;
+    cursor:auto;padding-bottom:0;margin-top:36px
+  }
+  .rail.stories .story{flex:none;width:100%;max-width:none}
+  .rail.stories .story.more{display:none}
+  .rail.stories.open .story.more{display:flex}
+  .rail.stories+.rail-hint{display:none}
+  .more-btn{display:block}
+  .rail.stories.open+.rail-hint+.more-btn{display:none}
+  .step{grid-template-columns:60px 1fr}
+  .step-n{font-size:32px}
+  .read .first::first-letter{font-size:58px}
+}
+@media (max-width:520px){
+  .cases{grid-template-columns:repeat(2,1fr)}
+  .btn{padding:17px 30px;font-size:13px;width:100%}
+  .cta-row{flex-direction:column;align-items:stretch}
+  /* липкая кнопка нужна именно на телефоне: там между призывами
+     получалось больше десяти экранов (замечание Татьяны 11.09) */
+  .dock{display:block;left:12px;right:12px;transform:translate(0,140%)}
+  .dock.on{transform:translate(0,0)}
+  .dock .btn{width:100%}
+  .cta-mid{padding:30px 20px}
+}
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+  .dock .btn{animation:none}
+  .hero-figure{transform:none !important}
+}
+
+/* интенсив: плашки первого экрана, шапки дней, таблица организации */
+.badges{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:26px 0 4px}
+.badge{
+  border:1px solid var(--line);border-radius:999px;padding:9px 18px;
+  font-size:13.5px;letter-spacing:.04em;color:var(--gold-lt);
+  background:rgba(201,162,39,.05)
+}
+.day-head{
+  display:grid;grid-template-columns:96px 1fr;gap:26px;align-items:start;
+  margin:64px 0 0;padding-top:30px;border-top:1px solid rgba(201,162,39,.28)
+}
+.day-n{
+  font-family:var(--serif);font-size:66px;line-height:.9;color:var(--gold);
+  opacity:.85
+}
+.day-head h3{font-size:clamp(22px,2.6vw,30px);margin-bottom:10px}
+.day-head p{margin:0;color:#cdc6bb;font-size:17.5px;max-width:620px}
+.day-out{
+  font-family:var(--serif);font-style:italic;color:var(--gold-lt);
+  font-size:clamp(18px,2vw,22px);margin:26px 0 0;padding-left:2px
+}
+.fmt{margin-top:40px;border-top:1px solid rgba(255,255,255,.08)}
+.fmt-row{
+  display:grid;grid-template-columns:230px 1fr;gap:24px;
+  padding:20px 0;border-bottom:1px solid rgba(255,255,255,.08)
+}
+.fmt-k{color:var(--gold);font-size:14px;letter-spacing:.08em;text-transform:uppercase;padding-top:3px}
+.fmt-v{color:#e3e3e5;font-size:17.5px}
+@media (max-width:760px){
+  .day-head{grid-template-columns:62px 1fr;gap:16px}
+  .day-n{font-size:44px}
+  .fmt-row{grid-template-columns:1fr;gap:6px;padding:16px 0}
+}
+
+.shot{margin:44px 0 0}
+.shot img{width:100%;border-radius:6px;border:1px solid rgba(201,162,39,.22)}
+.vert .step-n{font-size:40px}
+.hero-figure .cap{position:relative;z-index:3;margin-top:16px;font-family:var(--mono);
+  font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);text-align:center}
+.hero-k{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--gold);margin:0 0 22px}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr}
+  .hero-figure{order:0;max-width:300px;margin:34px auto 0}
+  .hero-figure img{max-height:none;object-fit:contain}
+  .shot-hint{display:block}}
+.shot a{display:block}
+.shot-hint{display:none;margin-top:10px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--mute);text-align:center}
+</style>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+ym(112568432, "init", {clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/112568432" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<script>
+document.addEventListener("click", function(e){
+  var a = e.target.closest && e.target.closest("a");
+  if (a && a.textContent.indexOf("Рассчитать") !== -1 && typeof ym === "function") {
+    ym(112568432, "reachGoal", "kub_bot_click");
+  }
+}, true);
+</script>
+</head>
+<body>
+<div class="prog"></div>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="hero-k">Екатерина Корягина · Куб Высшей Миссии</p>
+      <h1>В дате твоего рождения уже записан код твоего масштаба</h1>
+      <p class="lead">Куб Высшей Миссии показывает, ради чего ты здесь, через что к тебе текут БОЛЬШИЕ деньги и с кем у тебя складывается союз без надрыва.</p>
+      <div class="cta-row"><a class="btn" href="https://t.me/koryaginakate_bot?start=kub" target="_blank" rel="noopener">Рассчитать свой Куб</a></div>
+      <p class="hero-note">Расчёт бесплатный, 3 минуты в Telegram.</p>
+    </div>
+    <figure class="hero-figure">
+      <img src="img/card.jpg" alt="Карточка Куба Высшей Миссии Екатерины Корягиной" fetchpriority="high" width="720" height="900">
+      <p class="cap">Мой Куб: Солнечный Пробудитель Структур</p>
+    </figure>
+  </div>
+</header>
+
+<hr class="sec-line">
+
+<section>
+  <div class="read rv">
+    <p class="first lead">Сколько курсов, марафонов и наставников ты купила за последний год?</p>
+    <p>А теперь честно. После скольких из них случился прорыв? Прям квантовый.</p>
+<p>Я сама чемпион по покупке курсов 😂 Поэтому знаю этот круг изнутри.</p>
+  </div>
+  <p class="pull rv">80% действий в старой парадигме это слив энергии и топтание на месте.</p>
+  <div class="read rv"><p>Мы чиним следствия. Новая воронка, новая практика, новый наставник.</p>
+<p>Большие деньги и отношения мечты открываются только через высшую миссию. И у каждой из нас она своя.</p></div>
+</section>
+
+<hr class="sec-line">
+
+<section class="panel">
+  <div class="wrap">
+    <div class="rv" style="max-width:760px">
+      <p class="eyebrow">Зеркало</p>
+      <h2>Где твой реальный затык?</h2>
+    </div>
+    <div class="levels rv"><article class="card"><h3>Синдром «Не ДО»</h3><p>Чувствуешь в себе масштаб и соглашаешься на малое. Занижаешь чек и ещё скидку сверху даёшь.</p></article>
+<article class="card"><h3>Отношения на травме</h3><p>Ты спасатель. Всех тащишь, всех понимаешь, и на себя ресурса уже нет.</p></article>
+<article class="card"><h3>Операционный ад</h3><p>Хотела вести людей за собой, а ведёшь таблицу в экселе. И закапываешься в мелочах.</p></article></div>
+  </div>
+  <p class="pull rv" style="margin-top:60px">Ты решаешь проблему на том же уровне, где она создана. Там решения НЕТ.</p>
+</section>
+
+<hr class="sec-line">
+
+<section>
+  <div class="wrap">
+    <div class="rv" style="max-width:820px">
+      <p class="eyebrow">Старая и новая модель</p>
+      <h2>Лидер старого времени и лидер нового</h2>
+    </div>
+    <figure class="shot rv"><a href="img/evolution.jpg" target="_blank" rel="noopener"><img src="img/evolution.jpg" alt="Эволюция лидерства: старое и новое время" loading="lazy" width="1920" height="1080"></a><figcaption class="shot-hint">Нажми, чтобы увеличить</figcaption></figure>
+  </div>
+  <div class="read rv" style="margin-top:44px"><p>Лидер старого времени идёт из дефицита и борьбы. Закопан в операционке. Бегает за клиентами: «купи, ну купи, ну пожааалуйста». И спасает партнёра, потому что одной страшно.</p>
+<p>Лидер нового времени идёт из высшей миссии. Масштабируется через ИИ. Продаёт через поле на высокий чек. Строит союз равных.</p></div>
+  <p class="pull rv">Мир платит большие деньги за объём твоей ответственности и миссии. Деньги и любовь приходят следствием.</p>
+</section>
+
+<hr class="sec-line">
+
+<section class="panel">
+  <div class="wrap">
+    <div class="rv" style="max-width:820px">
+      <p class="eyebrow">Ядро метода</p>
+      <h2>Что такое Куб Высшей Миссии</h2>
+    </div>
+    <div class="read rv" style="margin-left:0;margin-top:28px"><p>Почему куб? Потому что масштаб объёмный. Одной практикой по понедельникам его не собрать.</p>
+<p>Твоя дата рождения раскладывается на четыре числа. Каждое отвечает за свою вершину.</p></div>
+    <div class="steps vert"><div class="step rv"><div class="step-n">01</div><div><h3>Проявление</h3><p>Как ты звучишь и через что люди идут за тобой. Голос, тело, смелость или тишина.</p></div></div>
+<div class="step rv"><div class="step-n">02</div><div><h3>Поток и интуиция</h3><p>Откуда приходит твоя энергия и как ты слышишь себя, когда голова шумит.</p></div></div>
+<div class="step rv"><div class="step-n">03</div><div><h3>Большие деньги и масштаб</h3><p>Через что к тебе текут деньги и какого размера твоё поле.</p></div></div>
+<div class="step rv"><div class="step-n">04</div><div><h3>Божественный союз</h3><p>Какой союз тебя усиливает и где твоё служение миру.</p></div></div></div>
+  </div>
+  <p class="pull rv" style="margin-top:60px">Выпала одна вершина, и куб рушится. Есть миссия и нет денег, получается бедный философ. Есть деньги и нет союза, получается богатый невротик.</p>
+  <div class="read rv"><p>Из четырёх чисел складывается имя твоего архетипа. Моё, например, Солнечный Пробудитель Структур.</p></div>
+</section>
+
+<hr class="sec-line">
+
+<section>
+  <div class="wrap">
+    <div class="rv" style="max-width:820px">
+      <p class="eyebrow">Расчёт</p>
+      <h2>Что ты получишь за 3 минуты</h2>
+    </div>
+    <ol class="loops takes rv" style="margin-top:40px"><li>Карточку своего Куба: четыре числа и имя архетипа.</li>
+<li>Расшифровку каждой вершины.</li>
+<li>Свою заслонку прямо сейчас: в деньгах, в отношениях и в теле.</li>
+<li>Натальные ключи: Солнце, Луну и Асцендент, если знаешь время рождения.</li></ol>
+    <div class="cta-mid rv"><p class="cta-mid-note">3 минуты в Telegram. Нужна только дата рождения.</p><div class="cta-row"><a class="btn" href="https://t.me/koryaginakate_bot?start=kub" target="_blank" rel="noopener">Рассчитать свой Куб</a></div></div>
+  </div>
+</section>
+
+<hr class="sec-line">
+
+<section class="panel">
+  <div class="wrap author-grid rv">
+    <figure class="author-figure"><img src="img/author.jpg" alt="Екатерина Корягина" loading="lazy" width="900" height="1350"></figure>
+    <div>
+      <p class="eyebrow">Кто стоит за методом</p>
+      <h2>Екатерина Корягина</h2>
+      <div style="margin-top:26px"><p>Я Екатерина Корягина. Квантовый проводник и IT-предприниматель. Да, так бывает в одном человеке.</p>
+<p>Мне долго говорили, что так нельзя. Оказалось, МОЖНО. Я освобождаю внутренний ресурс и тут же заземляю его в твёрдую систему ИИ.</p></div>
+      <ul class="facts"><li>Больше 100 кейсов: квантовые скачки предпринимателей и лидеров без выгорания.</li>
+<li>0% рутины: операционку и воронки ведут ИИ-технологии.</li>
+<li>Всё и сразу: сверхдоход, божественный партнёр, материнство и проявленность.</li></ul>
+    </div>
+  </div>
+</section>
+
+<hr class="sec-line">
+
+<section>
+  <div class="wrap">
+    <div class="rv" style="max-width:820px">
+      <p class="eyebrow">Пруфы</p>
+      <h2>Цифры органики</h2>
+    </div>
+    <div class="read rv" style="margin-left:0;margin-top:28px"><p>Пять лет я сидела в Instagram на двух с половиной тысячах. Пять лет!</p>
+<p>Сейчас там больше десяти тысяч, в Threads почти тридцать. За 30 дней июля мои ролики набрали 12 миллионов просмотров, и 99,6% этих людей меня не знали.</p>
+<p>Всё это органика. Я поменяла то, что ВНУТРИ, и цифры снаружи догнали.</p></div>
+    <figure class="shot rv"><a href="img/proof.jpg" target="_blank" rel="noopener"><img src="img/proof.jpg" alt="Цифры органики Екатерины Корягиной" loading="lazy" width="1920" height="1080"></a><figcaption class="shot-hint">Нажми, чтобы увеличить</figcaption></figure>
+  </div>
+</section>
+
+<hr class="sec-line">
+
+<section class="panel">
+  <div class="wrap">
+    <div class="rv" style="max-width:820px">
+      <p class="eyebrow">Кейсы</p>
+      <h2>Мои клиенты в цифрах</h2>
+    </div>
+    <figure class="shot rv"><a href="img/cases.jpg" target="_blank" rel="noopener"><img src="img/cases.jpg" alt="Результаты клиентов Екатерины Корягиной" loading="lazy" width="1920" height="1080"></a><figcaption class="shot-hint">Нажми, чтобы увеличить</figcaption></figure>
+    <div class="read rv" style="margin-left:0;margin-top:36px"><p>Плюс миллион. Плюс два. Плюс три миллиона триста.</p>
+<p>За каждой цифрой живой человек и его квантовый скачок. У каждого свой путь и своя скорость.</p></div>
+  </div>
+</section>
+
+<hr class="sec-line">
+
+<section>
+  <div class="wrap">
+    <div class="rv" style="max-width:820px">
+      <p class="eyebrow">Результат</p>
+      <h2>Что происходит, когда Куб собран</h2>
+    </div>
+    <div class="levels rv"><article class="card"><h3>Внутри</h3><p>Высвобождается колоссальная энергия. Уходят сомнения и это вечное «Не ДО».</p></article>
+<article class="card"><h3>В материи</h3><p>Растут чеки, приходит твоя аудитория, рутину забирает ИИ.</p></article>
+<article class="card"><h3>В жизни</h3><p>Отношения равных и ясность каждого шага. Люди идут за тобой.</p></article></div>
+    <div class="cta-mid rv"><p class="cta-mid-note">3 минуты в Telegram. Нужна только дата рождения.</p><div class="cta-row"><a class="btn" href="https://t.me/koryaginakate_bot?start=kub" target="_blank" rel="noopener">Рассчитать свой Куб</a></div></div>
+  </div>
+</section>
+
+<hr class="sec-line">
+
+<section class="panel">
+  <div class="read rv">
+    <p class="eyebrow">Дальше</p>
+    <h2>Куб показывает код. Дорожную карту мы собираем вместе</h2>
+    <div style="margin-top:26px"><p>Базовый код твоей миссии записан в дате рождения всегда. Ради чего ты здесь проявилась.</p>
+<p>А вот реализовать его, подобрать форму проявления, получается только когда выходишь из установок, которые наложили детство, социум и привычки. Долженствование, обесценивание, заслонки. Это тонкие грани.</p>
+<p>Поэтому после расчёта бот подарит тебе бонусный сертификат на личную расшифровку Куба со мной. 90 минут в Zoom: разбираем твои вершины, находим, что держит, и собираем дорожную карту реализации.</p>
+<p>Сертификат сохраняется сутки после расчёта. Время выбираешь сама в календаре.</p></div>
+  </div>
+</section>
+
+<hr class="sec-line">
+
+<section>
+  <div class="wrap" style="max-width:900px">
+    <div class="rv">
+      <p class="eyebrow">Честно о сомнениях</p>
+      <h2>Четыре вопроса, которые задают чаще всего</h2>
+    </div>
+    <div class="fears"><article class="fear rv"><h3>Я не верю в астрологию</h3><p>Куб считается по дате рождения. Прочитай расшифровку и проверь телом, откликается или нет. В конце бот спросит, насколько попало, и с любой оценкой покажет, что делать дальше.</p></article>
+<article class="fear rv"><h3>А если не попадёт?</h3><p>Это тоже ответ. Когда попадания мало, значит, стоят заслонки и тебе есть с чем работать, чтобы соединиться со своим Кубом. Я поздравляю тех, у кого так вышло: точка роста найдена.</p></article>
+<article class="fear rv"><h3>Я не знаю время рождения</h3><p>Куб считается по одной дате. Время нужно только для Асцендента, без него расчёт тоже полный.</p></article>
+<article class="fear rv"><h3>Это платно?</h3><p>Расчёт Куба бесплатный. Личная расшифровка идёт по бонусному сертификату, условия бот пришлёт сразу после расчёта.</p></article></div>
+  </div>
+</section>
+
+<hr class="sec-line">
+
+<section class="final">
+  <div class="read rv">
+    <p class="eyebrow">Твой следующий шаг</p>
+    <h2>Собери свой Куб Высшей Миссии</h2>
+    <div style="margin-top:34px"><p>Хватит соглашаться на малое. Займи своё место Лидера.</p>
+<p>Время полумер прошло. Решение за тобой.</p></div>
+    <div class="cta-row" style="justify-content:center"><a class="btn" href="https://t.me/koryaginakate_bot?start=kub" target="_blank" rel="noopener">Рассчитать свой Куб</a></div>
+    <p class="hero-note">Расчёт бесплатный, 3 минуты в Telegram.</p>
+    <p class="hero-note">Вопросы пиши мне в личку @nastavnikkate.</p>
+    <p class="sign">До встречи внутри 🔥 Екатерина</p>
+  </div>
+</section>
+
+<div class="dock"><a class="btn" href="https://t.me/koryaginakate_bot?start=kub" target="_blank" rel="noopener">Рассчитать свой Куб</a></div>
+
+<footer>
+  <div class="wrap foot-grid">
+    <span class="foot-name">Екатерина Корягина</span>
+    <span>Куб Высшей Миссии</span>
+    <span>Расчёт в Telegram-боте @koryaginakate_bot</span>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+
+  var dock=document.querySelector('.dock'), hero=document.querySelector('.hero');
+  var last=document.querySelector('.final');
+  var prog=document.querySelector('.prog');
+  var figure=document.querySelector('.hero-figure');
+  var calm=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var wide=window.matchMedia('(min-width:901px)');
+  wide.addEventListener('change',function(){ if(figure && !wide.matches) figure.style.transform=''; });
+
+  function onScroll(){
+    var y=window.scrollY, h=hero.offsetHeight;
+    var nearEnd=last.getBoundingClientRect().top < window.innerHeight*0.9;
+    dock.classList.toggle('on', y>h*0.9 && !nearEnd);
+
+    var doc=document.documentElement;
+    var max=doc.scrollHeight-window.innerHeight;
+    if(prog) prog.style.width=(max>0 ? (y/max)*100 : 0)+'%';
+
+    // портрет едет медленнее текста, пока первый экран в кадре.
+    // ТОЛЬКО на широком экране: на телефоне и во встроенном браузере Телеграма портрет
+    // наезжал на заголовок, там колонки стоят друг под другом (правка 2026-07-26)
+    if(figure && !calm && wide.matches && y<h*1.2) figure.style.transform='translateY('+(y*0.14)+'px)';
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+
+  // суммы в кейсах набегают от нуля
+  function runCount(el){
+    var raw=el.getAttribute('data-sum')||el.textContent;
+    var digits=raw.replace(/[^0-9]/g,'');
+    if(!digits){ return; }
+    var target=parseInt(digits,10), t0=null, dur=1100;
+    var pre=raw.slice(0, raw.search(/[0-9]/));
+    var post=raw.slice(raw.search(/[0-9]/)).replace(/[0-9\s\u00a0]/g,'');
+    function fmt(n){ return n.toLocaleString('ru-RU').replace(/,/g,' '); }
+    function frame(t){
+      if(!t0) t0=t;
+      var k=Math.min((t-t0)/dur,1);
+      var eased=1-Math.pow(1-k,3);
+      el.textContent=pre+fmt(Math.round(target*eased))+(post?' '+post:'');
+      if(k<1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+  var sums=document.querySelectorAll('.case span,.story-sum');
+  if(!calm && sums.length){
+    var cio=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){ runCount(e.target); cio.unobserve(e.target); }
+      });
+    },{threshold:.5});
+    sums.forEach(function(el){ el.setAttribute('data-sum',el.textContent); cio.observe(el); });
+  }
+
+  // на телефоне истории лежат столбиком, четвёртая и дальше раскрываются по кнопке
+  document.querySelectorAll('.more-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var rail=document.querySelector('.rail.'+btn.getAttribute('data-rail'));
+      if(!rail) return;
+      rail.classList.add('open');
+      btn.style.display='none';
+    });
+  });
+
+  // ленты тянутся мышью с инерцией
+  document.querySelectorAll('.rail').forEach(function(rail){
+    var down=false,sx=0,sl=0,moved=0;
+    rail.addEventListener('pointerdown',function(e){
+      if(e.pointerType==='touch') return;
+      down=true;moved=0;sx=e.clientX;sl=rail.scrollLeft;
+    });
+    rail.addEventListener('pointermove',function(e){
+      if(!down) return;
+      var d=e.clientX-sx; moved=Math.abs(d);
+      // класс вешаем только когда тянут по-настоящему: он гасит pointer-events у детей,
+      // а на простом нажатии это съедало клик по отзыву
+      if(moved>6) rail.classList.add('dragging');
+      rail.scrollLeft=sl-d;
+    });
+    ['pointerup','pointerleave','pointercancel'].forEach(function(ev){
+      rail.addEventListener(ev,function(){ down=false;rail.classList.remove('dragging'); });
+    });
+    rail.addEventListener('click',function(e){ if(moved>6) e.preventDefault(); },true);
+  });
+
+  // отзыв во весь экран
+  var shots=[].slice.call(document.querySelectorAll('.rail.reviews img'));
+  if(shots.length){
+    var lb=document.createElement('div');
+    lb.className='lb';
+    lb.innerHTML='<button class="lb-x" aria-label="Закрыть">&#215;</button>'+
+      '<button class="lb-nav lb-prev" aria-label="Назад">&#8249;</button>'+
+      '<img alt="Отзыв">'+
+      '<button class="lb-nav lb-next" aria-label="Вперёд">&#8250;</button>';
+    document.body.appendChild(lb);
+    var big=lb.querySelector('img'), idx=0;
+    function show(i){
+      idx=(i+shots.length)%shots.length;
+      big.src=shots[idx].getAttribute('src');
+      lb.classList.add('on');
+      document.body.style.overflow='hidden';
+    }
+    function hide(){ lb.classList.remove('on'); document.body.style.overflow=''; }
+    shots.forEach(function(im,i){ im.addEventListener('click',function(){ show(i); }); });
+    lb.querySelector('.lb-x').addEventListener('click',hide);
+    lb.querySelector('.lb-prev').addEventListener('click',function(e){ e.stopPropagation(); show(idx-1); });
+    lb.querySelector('.lb-next').addEventListener('click',function(e){ e.stopPropagation(); show(idx+1); });
+    lb.addEventListener('click',function(e){ if(e.target===lb) hide(); });
+    document.addEventListener('keydown',function(e){
+      if(!lb.classList.contains('on')) return;
+      if(e.key==='Escape') hide();
+      if(e.key==='ArrowLeft') show(idx-1);
+      if(e.key==='ArrowRight') show(idx+1);
+    });
+  }
+});
+</script>
+</body>
+</html>
