@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Персональный бренд и клуб · предложение Екатерины Корягиной</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f1e9;--card:#fffdf9;--ink:#1d1a17;--text:#3b352f;--muted:#7d7266;--camel:#a8794e;--line:#e6dccd;--dark:#211d19}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;font-size:17px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 18px}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;color:var(--ink);font-weight:600;line-height:1.1}
+h2{font-size:clamp(32px,5vw,48px);margin-bottom:22px}
+h3{font-size:26px;margin-bottom:8px}
+em{font-style:italic;color:var(--camel)}
+section{padding:56px 0}
+.kicker{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--camel);font-weight:700;margin-bottom:14px}
+.hero{position:relative;min-height:min(88vh,780px);display:flex;align-items:flex-end;color:#fff}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,12,.05) 30%,rgba(20,16,12,.78) 100%)}
+.hero .txt{position:relative;padding:0 0 56px;width:100%}
+.hero .kicker{color:#e9d3b8}
+.hero h1{color:#fff;font-size:clamp(38px,6.4vw,74px);max-width:860px}
+.hero h1 em{color:#e9c9a1}
+.hero p{margin-top:16px;max-width:620px;font-size:clamp(16px,2vw,19px);color:#f3ebe1}
+.for{background:var(--card);border:1px solid var(--line);padding:32px;margin-top:-34px;position:relative}
+.for p{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(22px,2.8vw,28px);color:var(--ink);line-height:1.35}
+.points{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.pt{background:var(--card);padding:26px}
+.pt .lbl{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--camel);font-weight:700}
+.pt h3{margin:6px 0 10px}
+.pt.c{background:var(--dark);color:#e8dfd3}
+.pt.c h3{color:#fff}
+.lead2{font-size:18px;max-width:720px;margin-bottom:26px}
+.mod{display:grid;grid-template-columns:120px 1fr;gap:24px;padding:30px 0;border-top:1px solid var(--line)}
+.mod:last-child{border-bottom:1px solid var(--line)}
+.mod .n{font-family:'Cormorant Garamond',serif;font-size:64px;color:var(--camel);line-height:1}
+.mod .goal{color:var(--muted);margin-bottom:12px}
+.mod ul{list-style:none}
+.mod li{padding:8px 0 8px 22px;position:relative}
+.mod li::before{content:"";position:absolute;left:0;top:19px;width:10px;height:1px;background:var(--camel)}
+.mod li b{color:var(--ink)}
+.tbl{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);font-size:15px}
+.tbl th,.tbl td{padding:14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl th{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--camel)}
+.tbl td:last-child{white-space:nowrap;font-weight:700;color:var(--ink)}
+.tbl tr.sum td{background:var(--dark);color:#fff;font-weight:700}
+.scroll{overflow-x:auto}
+.note{font-size:14px;color:var(--muted);margin-top:12px}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.box{background:var(--card);border:1px solid var(--line);padding:26px}
+.box ul{list-style:none}
+.box li{padding:7px 0;border-bottom:1px dashed var(--line)}
+.box li:last-child{border:0}
+.price{background:var(--dark);color:#e8dfd3;padding:44px 32px;text-align:center}
+.price h2{color:#fff}
+.price .sum{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,9vw,88px);color:#e9c9a1;line-height:1}
+.price .plan{max-width:560px;margin:22px auto 0;border-top:1px solid #4a4038;padding-top:18px}
+.cta{display:inline-block;margin-top:26px;background:#e9c9a1;color:var(--dark);font-weight:700;padding:16px 34px;text-decoration:none;letter-spacing:.06em}
+footer{text-align:center;padding:30px 0 44px;color:var(--muted);font-size:14px}
+@media (max-width:640px){
+  .mod{grid-template-columns:1fr;gap:6px}
+  .mod .n{font-size:44px}
+  .for{padding:22px}
+  section{padding:42px 0}
+  .hero{min-height:min(78vh,700px)}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img src="hero.jpg" alt="Камерный шоурум в центре Санкт-Петербурга">
+  <div class="veil"></div>
+  <div class="txt"><div class="wrap">
+    <div class="kicker">Коммерческое предложение</div>
+    <h1>Персональный бренд и закрытый клуб: от закупок к <em>своему пространству</em> в Петербурге</h1>
+    <p>Предложение для Кати от Екатерины Корягиной</p>
+  </div></div>
+</header>
+
+<div class="wrap">
+  <div class="for">
+    <div class="kicker">Для кого</div>
+    <p>Для Кати. 12 лет в fashion-бизнесе, байер итальянских коллекций с тонким вкусом. Готова выйти из постоянной гонки, раскрыть свой масштаб без перегруза и собрать вокруг себя женщин-единомышленниц.</p>
+  </div>
+</div>
+
+<section><div class="wrap">
+  <div class="kicker">Карта перехода</div>
+  <h2>От точки А к миллионному доходу</h2>
+  <div class="points">
+    <div class="pt"><div class="lbl">Точка А · сейчас</div><h3>Вкус и опыт</h3>
+      <p>Закупка коллекций в Италии, опыт превращения 300 000 ₽ в 1,5 млн ₽ оборота. Контент отнимает много сил, блог даётся через напряжение и зажатость в голосе, бизнес держится на личных усилиях.</p></div>
+    <div class="pt"><div class="lbl">Точка B · опора</div><h3>Регулярные встречи</h3>
+      <p>Блог выходит регулярно через ИИ-систему и ассистента. Сессии снимают спазм в горле. Запущены закрытые девичники с чеком от 10 000 ₽. Итальянские капсулы легко уходят своим клиенткам.</p></div>
+    <div class="pt c"><div class="lbl">Точка C · масштаб</div><h3>Своё пространство</h3>
+      <p>Камерное минималистичное пространство в центре Петербурга: ароматы, музыка, закрытый доступ. Женский клуб с ежемесячной подпиской. От 1 000 000 ₽ чистыми в месяц, свободный график, поездки и время для себя и семьи.</p></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="kicker">Формат</div>
+  <h2>Персональное продюсирование</h2>
+  <p class="lead2">Совместная практическая работа и инфраструктура вокруг Кати. Без лекций и домашних заданий.</p>
+
+  <div class="mod"><div class="n">I</div><div>
+    <h3>Голос, тело и природный магнетизм</h3>
+    <p class="goal">Очные сессии на кушетке в кабинете, раз в неделю.</p>
+    <ul>
+      <li><b>Свобода горла и плеч.</b> Уходит скованность, перехваченное дыхание и усталость связок после общения и съёмок.</li>
+      <li><b>Свобода перед камерой.</b> Напряжённая «глянцевая идеальность» сменяется живым, тёплым и манким проявлением, которое притягивает взгляды и комплименты.</li>
+      <li><b>Разрешение на масштаб и высокие чеки.</b> Спокойная уверенность в ценности своего вкуса и опыта. Доказывать никому ничего не нужно.</li>
+      <li><b>Энергия и выдох.</b> Возвращается лёгкость, бизнес строится из удовольствия и наполненности.</li>
+    </ul></div></div>
+
+  <div class="mod"><div class="n">II</div><div>
+    <h3>Автономный контент-завод без выгорания</h3>
+    <p class="goal">Цель: блог растёт и продаёт, и при этом забирает у Кати пару часов в неделю.</p>
+    <ul>
+      <li><b>ИИ-агенты.</b> Обучены на интонациях и вкусе Кати. Генерируют идеи и пишут живые сценарии Reels о секретах итальянского стиля, капсульном гардеробе и закулисье моды.</li>
+      <li><b>Ассистент на публикациях.</b> Катя снимает короткие видео в зеркало или на встречах, 1-2 часа в неделю. Монтаж, тексты, оформление и выкладку делает ассистент.</li>
+      <li><b>Упаковка личного бренда.</b> Чувственная петербурженка-байер, которая знает себе цену. У неё хочется одеваться и учиться стилю жизни.</li>
+    </ul></div></div>
+
+  <div class="mod"><div class="n">III</div><div>
+    <h3>Закрытый клуб и первые ивенты</h3>
+    <p class="goal">Цель: разовые встречи с подругами превращаются в системный высокодоходный актив.</p>
+    <ul>
+      <li><b>Авторские девичники.</b> Упаковка формата: камерные бранчи, разборы капсул, лекции по эстетике. Катя главный организатор и вдохновитель.</li>
+      <li><b>Монетизация встреч.</b> Сценарий, в котором участницы покупают билет и оформляют заказы на приехавшую коллекцию на высокие чеки.</li>
+      <li><b>Клуб по подписке.</b> Регулярное членство: чат резидентов, секретные распродажи, спеццены на шопинг в Италии, закрытые завтраки.</li>
+      <li><b>Подготовка пространства.</b> Пошаговый расчёт и лист ожидания в авторский шоурум в центре города.</li>
+    </ul></div></div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="kicker">Окупаемость</div>
+  <h2>Вложения возвращаются на точке B</h2>
+  <p class="lead2">Клубная модель и продажи капсул работают вместе:</p>
+  <div class="scroll">
+  <table class="tbl">
+    <tr><th>Источник</th><th>Механика</th><th>Доход</th></tr>
+    <tr><td>Камерные девичники</td><td>2 встречи в месяц на 15 участниц, билет 10 000 ₽</td><td>300 000 ₽</td></tr>
+    <tr><td>Итальянская коллекция</td><td>Капсулы участницам встреч и тёплым подписчицам</td><td>400 000-600 000 ₽</td></tr>
+    <tr><td>Резидентство в клубе</td><td>30 участниц, взнос 7 000 ₽ в месяц</td><td>210 000 ₽/мес</td></tr>
+    <tr class="sum"><td>Итого в месяц</td><td></td><td>от 910 000 ₽</td></tr>
+  </table>
+  </div>
+  <p style="margin-top:20px">Два качественных мероприятия и продажа приехавшей партии окупают сопровождение за 1,5-2 месяца. В итоге у Кати готовая система: работающий клуб, лояльная аудитория и настроенный контент-завод.</p>
+  <p class="note">По коллекции указана выручка с продаж, закупка партии в неё не вычтена.</p>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="kicker">Результат</div>
+  <h2>Что изменится</h2>
+  <div class="two">
+    <div class="box"><h3>В бизнесе</h3><ul>
+      <li>Блог ведётся регулярно, без чувства вины и усталости.</li>
+      <li>Собрано сильное сообщество клиенток-подруг в Петербурге.</li>
+      <li>Коллекции продаются на высокие чеки, остатки не пугают.</li>
+      <li>Готов фундамент под открытие своего пространства.</li>
+    </ul></div>
+    <div class="box"><h3>В жизни</h3><ul>
+      <li>Горло и тело свободны, голос звучит глубоко, уверенно и притягательно.</li>
+      <li>Тревога «а вдруг не справлюсь» уходит: рядом опора и пошаговый план.</li>
+      <li>Деньги приходят регулярно и возвращают гордость собой.</li>
+      <li>Есть время на неспешные завтраки, путешествия и свидания с мужем.</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="price">
+    <div class="kicker">Стоимость</div>
+    <h2>Персональное сопровождение</h2>
+    <div class="sum">700 000 ₽</div>
+    <div class="plan">Комфортный график оплаты: 350 000 ₽ на старте. Вторая часть после первого платного девичника и реализации новой поставки.</div>
+    <a class="cta" href="https://t.me/nastavnikkate">Обсудить с Екатериной</a>
+  </div>
+</div></section>
+
+<footer>Санкт-Петербург · предложение Екатерины Корягиной</footer>
+</body>
+</html>
