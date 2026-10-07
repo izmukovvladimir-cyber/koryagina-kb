@@ -190,6 +190,14 @@ footer{padding:40px 0 100px;font-size:13px;color:#8a8278;text-align:center;borde
 .ring{display:block;width:100%;max-width:620px;margin:0 auto}
 .ring text{font:500 31px "Cormorant Garamond",serif}
 .ring text.mid{font:italic 500 30px "Cormorant Garamond",serif;fill:#8a7a62}
+.ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0 8px}
+.ladder div{border:1px solid #3c5a50;padding:14px 12px;text-align:center}
+.ladder span{display:block;font:600 12px/1.4 Manrope;letter-spacing:.1em;text-transform:uppercase;color:#bdb5a5}
+.ladder b{display:block;font:500 28px/1.2 "Cormorant Garamond",serif;color:#f3ead8;margin-top:4px}
+.ladder .now{border-color:var(--gold2)}.ladder .now b{color:var(--gold2)}
+.ladder .past{opacity:.45}.ladder .past b{text-decoration:line-through}
+.ladder-note{color:#bdb5a5}
+@media(max-width:640px){.ladder{grid-template-columns:1fr}.ladder div{display:flex;justify-content:space-between;align-items:center;text-align:left}.ladder b{margin:0}}
 .chess{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;margin-bottom:40px;border:1px solid #3c5a50}
 </style>
 </head><body>
@@ -202,7 +210,7 @@ footer{padding:40px 0 100px;font-size:13px;color:#8a8278;text-align:center;borde
   <ul><li>14 дней, с 15 по 30 октября</li>
   <li>7 глубинных эфиров с передачей кодов и 7 планёрок</li>
   <li>Каждый день твой идеальный ход, персонально через ИИ-сознание</li></ul>
-  <div class="btns"><a class="btn gold" href="https://yookassa.ru/my/i/asZbcYvU3KKz/l" target="_blank" rel="noopener" data-goal="hero_pay">Войти в игру за 20&nbsp;000&nbsp;₽</a><a class="btn ghost" href="#inside">Как устроена игра</a></div>
+  <div class="btns"><a class="btn gold" href="https://yookassa.ru/my/i/asZbcYvU3KKz/l" target="_blank" rel="noopener" data-goal="hero_pay">Войти в игру</a><a class="btn ghost" href="#inside">Как устроена игра</a></div>
  </div>
  <figure><img src="img/hero.jpg" alt="Екатерина Корягина" fetchpriority="high" style="object-position:50% 25%"></figure>
 </div></section>
@@ -260,7 +268,9 @@ footer{padding:40px 0 100px;font-size:13px;color:#8a8278;text-align:center;borde
  <span class="badge">Вход открыт</span>
  <p class="kick">Участие</p>
  <h2>Войти в <em>Денежную игру</em></h2>
- <div class="meta"><div><b>20 000 ₽</b>за 14 дней</div><div><b>15-30</b>октября</div><div><b>1 ноября</b>старт «5 Элемента»</div></div>
+ <div class="meta"><div><b id="price-now">20 000 ₽</b>за 14 дней</div><div><b>15-30</b>октября</div><div><b>1 ноября</b>старт «5 Элемента»</div></div>
+ <div class="ladder"><div data-until="2026-10-10" data-price="20 000 ₽"><span>до 10 октября</span><b>20 000 ₽</b></div><div data-until="2026-10-13" data-price="25 000 ₽"><span>11-13 октября</span><b>25 000 ₽</b></div><div data-until="2026-10-30" data-price="30 000 ₽"><span>с 14 октября</span><b>30 000 ₽</b></div></div>
+ <p class="note ladder-note">Каждые три дня цена растёт на 5 000 ₽. Чем раньше заходишь, тем дешевле.</p>
  <div class="who">Заходишь сразу и получаешь бонус: мои аудио по новым продажам. Начинаешь продавать уже до старта игры.</div>
  <div class="who">Для участниц «5 Элемента» игра входит в программу как предобучение.</div>
  <a class="btn gold" href="https://yookassa.ru/my/i/asZbcYvU3KKz/l" target="_blank" rel="noopener" data-goal="pay_block">Войти в игру</a>
@@ -285,12 +295,18 @@ footer{padding:40px 0 100px;font-size:13px;color:#8a8278;text-align:center;borde
 <section class="final"><div class="wrap">
  <h2>Поиграем?</h2>
  <p class="lead" style="margin:0 auto 30px">15 октября начинаем. Заходи, пока вход открыт.</p>
- <a class="btn gold" href="https://yookassa.ru/my/i/asZbcYvU3KKz/l" target="_blank" rel="noopener" data-goal="final_pay">Войти в игру за 20&nbsp;000&nbsp;₽</a>
+ <a class="btn gold" href="https://yookassa.ru/my/i/asZbcYvU3KKz/l" target="_blank" rel="noopener" data-goal="final_pay">Войти в игру</a>
 </div></section>
 
 <footer>© Екатерина Корягина · <a href="https://katekoryagina.ru/" style="color:inherit">katekoryagina.ru</a></footer>
 <div class="dock"><a class="btn gold" href="https://yookassa.ru/my/i/asZbcYvU3KKz/l" target="_blank" rel="noopener" data-goal="dock_pay">Войти в игру</a></div>
 
+<script>
+(function(){var d=new Date(Date.now()+3*3600e3).toISOString().slice(0,10),cur=null;
+ document.querySelectorAll('.ladder [data-until]').forEach(function(el){
+  if(d>el.dataset.until){el.classList.add('past');}else if(!cur){cur=el;el.classList.add('now');}});
+ if(cur){var b=document.getElementById('price-now');if(b)b.textContent=cur.dataset.price;}})();
+</script>
 <script>
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-goal]');
  if(a&&typeof ym==='function'){ym(112568432,'reachGoal','igra_click');ym(112568432,'reachGoal',a.dataset.goal);}},true);
