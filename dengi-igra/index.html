@@ -305,7 +305,7 @@ footer{padding:40px 0 100px;font-size:13px;color:#8a8278;text-align:center;borde
 (function(){var d=new Date(Date.now()+3*3600e3).toISOString().slice(0,10),cur=null;
  document.querySelectorAll('.ladder [data-until]').forEach(function(el){
   if(d>el.dataset.until){el.classList.add('past');}else if(!cur){cur=el;el.classList.add('now');}});
- if(cur){var b=document.getElementById('price-now');if(b)b.textContent=cur.dataset.price;}})();
+ if(cur){var b=document.getElementById('price-now');if(b)b.textContent=cur.dataset.price;} if(d>='2026-10-11'){document.querySelectorAll('a[href="https://yookassa.ru/my/i/asZbcYvU3KKz/l"]').forEach(function(a){a.href='https://yookassa.ru/my/i/asn3tfYRcbW0/l';});}})();
 </script>
 <script>
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-goal]');
