@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Екатерина Корягина · психотерапевт и ментор</title>
+<meta name="description" content="Екатерина Корягина: квантовый и телесно-ориентированный психотерапевт, ментор, автор метода Резонанса и ИИ-наставника Эльли. Все продукты, кейсы и ссылки на одной странице.">
+<meta property="og:title" content="Екатерина Корягина · психотерапевт и ментор">
+<meta property="og:description" content="Деньги, отношения, тело. Все продукты, кейсы и ссылки на одной странице.">
+<meta property="og:image" content="https://katekoryagina.ru/rezonans/img/author.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0f0c;--bg2:#0f1a15;--panel:#121a16;--gold:#c9a227;--gold2:#e2c675;--txt:#efe9dc;--mut:#a9a596;--line:#26352d;--cream:#f6f3ea;--ink:#14110c}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;font-size:17px}
+a{color:inherit}
+.wrap{max-width:1060px;margin:0 auto;padding:0 18px}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;line-height:1.08}
+h1{font-size:clamp(44px,7.4vw,84px)}
+h2{font-size:clamp(34px,5.4vw,56px);margin-bottom:22px}
+h3{font-size:26px;margin-bottom:8px}
+em{font-style:italic;color:var(--gold2)}
+section{padding:64px 0}
+.kick{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:14px}
+.lead{font-size:clamp(17px,2.2vw,20px);color:var(--mut);max-width:720px}
+nav.top{position:sticky;top:0;z-index:5;background:rgba(11,15,12,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;gap:18px;overflow-x:auto;padding-top:12px;padding-bottom:12px;scrollbar-width:none}
+nav.top a{white-space:nowrap;text-decoration:none;font-size:14px;color:var(--mut)}
+nav.top a:hover{color:var(--gold2)}
+.hero .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;padding-top:40px}
+.hero img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;border:1px solid var(--line)}
+.role{font-size:clamp(16px,2vw,19px);margin-top:18px;color:var(--gold2);font-weight:600;letter-spacing:.02em}
+.hero p.lead{margin-top:16px}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.facts span{border:1px solid var(--line);padding:8px 14px;font-size:14px;color:var(--txt)}
+.btn{display:inline-block;margin-top:28px;background:var(--gold);color:var(--ink);font-weight:700;padding:16px 30px;text-decoration:none;letter-spacing:.03em}
+.btn.ghost{background:none;color:var(--gold2);border:1px solid var(--gold);margin-left:10px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.card{background:var(--panel);padding:26px}
+.card p{color:var(--mut)}
+.card b.n{display:block;font-family:"Cormorant Garamond",serif;font-size:40px;color:var(--gold);font-weight:500;line-height:1;margin-bottom:10px}
+.prod{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.p{background:var(--panel);border:1px solid var(--line);padding:26px;display:flex;flex-direction:column;text-decoration:none;transition:border-color .2s}
+.p:hover{border-color:var(--gold)}
+.p small{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.p h3{margin-top:8px}
+.p p{color:var(--mut);flex:1}
+.p .go{margin-top:16px;color:var(--gold2);font-weight:600}
+.p.free{background:var(--bg2)}
+.tantra{background:var(--cream);color:var(--ink)}
+.tantra .kick{color:#8a6d12}
+.tantra .grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.tantra p{color:#3d3a33}
+.tantra ul{list-style:none;margin-top:14px}
+.tantra li{padding:8px 0 8px 24px;position:relative;color:#3d3a33}
+.tantra li::before{content:"";position:absolute;left:0;top:19px;width:12px;height:1px;background:#8a6d12}
+.price{font-family:"Cormorant Garamond",serif;font-size:46px;color:var(--ink);margin-top:10px}
+.price small{font-family:Manrope,sans-serif;font-size:16px;color:#6b665a}
+.tantra .btn{background:var(--ink);color:var(--cream)}
+.tantra .note{font-size:14px;color:#6b665a;margin-top:14px}
+.kc{display:flex;gap:12px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x mandatory}
+.kc img{flex:0 0 auto;width:min(78vw,340px);height:auto;scroll-snap-align:start;border:1px solid var(--line)}
+.cases{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:26px}
+.case{background:var(--panel);border:1px solid var(--line);padding:14px;text-align:center}
+.case img{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.case span{display:block;font-size:13px;color:var(--mut);margin-top:6px;word-break:break-all}
+.case b{display:block;color:var(--gold2);font-size:18px;margin-top:2px}
+.swipe{font-size:13px;color:var(--mut);margin-top:6px}
+.vids{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.vid{background:var(--panel);border:1px solid var(--line)}
+.vid .fr{position:relative;aspect-ratio:16/9}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vid p{padding:14px 16px;font-size:15px}
+.final{background:var(--bg2);border:1px solid var(--line);padding:46px 30px;text-align:center}
+.final p{max-width:620px;margin:0 auto;color:var(--mut)}
+.soc{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:30px}
+.soc a{border:1px solid var(--line);padding:12px 20px;text-decoration:none;font-weight:600}
+.soc a:hover{border-color:var(--gold);color:var(--gold2)}
+.mag{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px;text-align:left}
+footer{text-align:center;padding:30px 0 44px;color:var(--mut);font-size:14px}
+@media (max-width:760px){
+  .hero .grid,.tantra .grid,.mag{grid-template-columns:1fr}
+  .hero img{max-width:340px}
+  section{padding:46px 0}
+  .btn.ghost{margin-left:0}
+}
+</style>
+</head>
+<body>
+
+<nav class="top"><div class="wrap">
+  <a href="#zaprosy">С чем работаю</a>
+  <a href="#produkty">Продукты</a>
+  <a href="#tantra">Личные сессии</a>
+  <a href="#keisy">Кейсы</a>
+  <a href="#video">Видео</a>
+  <a href="#start">С чего начать</a>
+</div></nav>
+
+<header class="hero"><div class="wrap grid">
+  <div>
+    <p class="kick">Обо мне</p>
+    <h1>Екатерина <em>Корягина</em></h1>
+    <p class="role">Квантовый и телесно-ориентированный психотерапевт, ментор миллионеров</p>
+    <p class="lead">Помогаю женщинам и экспертам выйти из гонки и надрыва в большие деньги, живое тело и счастливые отношения. Нахожу программу, которая держит твой потолок, и убираю её через метод Резонанса: мысль, тело, энергия, ясное действие.</p>
+    <div class="facts">
+      <span>Магистр психологии бизнеса ВШЭ</span>
+      <span>150 млн ₽ с клиентами на микроблогах</span>
+      <span>100+ выступлений</span>
+      <span>Автор ИИ-наставника Эльли</span>
+    </div>
+    <a class="btn" href="#produkty">Мои продукты</a><a class="btn ghost" href="#start">С чего начать</a>
+  </div>
+  <img src="../rezonans/img/author.jpg" alt="Екатерина Корягина" width="900" height="1125">
+</div></header>
+
+<section><div class="wrap">
+  <p class="kick">Позиционирование</p>
+  <h2>Причина <em>внутри</em>, снаружи следствие</h2>
+  <p class="lead">Пока ты чинишь симптом, партнёра, работу или стратегию, программа остаётся на месте и создаёт новый симптом. Я работаю с первопричиной: со слепыми зонами психики и с тем, что тело помнит. Когда меняется внутренняя частота, деньги и отношения начинают меняться следом, без попыток стать кем-то другим.</p>
+</div></section>
+
+<section id="zaprosy" style="padding-top:0"><div class="wrap">
+  <p class="kick">С какими запросами работаю</p>
+  <h2>С чем ко мне <em>приходят</em></h2>
+  <div class="grid3">
+    <div class="card"><b class="n">01</b><h3>Деньги и потолок</h3><p>Доход упёрся в одну цифру, страшно поднимать цену, деньги приходят и утекают. Находим, на что завязано твоё право брать.</p></div>
+    <div class="card"><b class="n">02</b><h3>Отношения</h3><p>Один и тот же сценарий с разными мужчинами, холодность, потеря себя рядом с партнёром. Возвращаем опору внутри и союз из целостности.</p></div>
+    <div class="card"><b class="n">03</b><h3>Тело и подавленные эмоции</h3><p>Ком в горле, зажимы, онемение, когда чувствовать страшно. Высвобождаем то, что тело держит годами, и возвращаем чувствительность.</p></div>
+    <div class="card"><b class="n">04</b><h3>Тревога и выгорание</h3><p>Снаружи всё успешно, внутри живёшь на морально-волевых. Убираем программу «мир небезопасен» и жизнь через обязанность.</p></div>
+    <div class="card"><b class="n">05</b><h3>Проявленность</h3><p>Синдром самозванца, страх быть увиденной и осуждённой. Выходишь в свет из своей сути и говоришь своим голосом.</p></div>
+    <div class="card"><b class="n">06</b><h3>Масштаб эксперта</h3><p>Продукт из сути, продажи без уговоров и дожимов, клиенты через резонанс. Для экспертов и предпринимательниц нового времени.</p></div>
+  </div>
+</div></section>
+
+<section id="produkty" style="padding-top:0"><div class="wrap">
+  <p class="kick">Навигация</p>
+  <h2>Мои <em>продукты</em></h2>
+  <p class="lead" style="margin-bottom:26px">Вся лестница по шагам. Не знаешь, с чего начать, начни с Куба высшей миссии: это бесплатно и занимает пару минут.</p>
+  <div class="prod">
+    <a class="p free" href="https://t.me/koryaginakate_bot?start=kub"><small>Начни здесь · бот</small><h3>Куб высшей миссии</h3><p>Дата рождения это код твоей души. Бот рассчитает 4 вершины твоего масштаба и точку, где сейчас заблокирована энергия.</p><span class="go">Получить расчёт ↗</span></a>
+    <a class="p free" href="https://t.me/koryaginakate_bot?start=tochka-pravdy"><small>Бот</small><h3>Точка правды</h3><p>Короткий тест, который показывает, где ты предаёшь себя и соглашаешься на меньшее. Честная точка, с которой начинается движение.</p><span class="go">Пройти ↗</span></a>
+    <a class="p" href="https://katekoryagina.ru/elli/"><small>Статья</small><h3>ИИ-наставник Эльли</h3><p>Карманный тренажёр для работы с подсознанием 24 на 7: снимает тревогу здесь и сейчас и находит программы в деньгах, отношениях и теле. Всё про Эльли в одной статье.</p><span class="go">Читать статью ↗</span></a>
+    <a class="p" href="https://katekoryagina.ru/dengi-igra/"><small>В записи</small><h3>Игра «Переход»</h3><p>Для тебя, если по-старому уже не можешь и хочешь начать сама, в своём темпе. Увидишь, где сама строишь свою реальность.</p><span class="go">Подробнее ↗</span></a>
+    <a class="p" href="https://katekoryagina.ru/klub-pozvolenie/"><small>Клуб · вход 27-29 ноября</small><h3>Клуб «Позволение»</h3><p>Каждый месяц снимаешь один запрет и проживаешь его телом. Рядом женщины, я каждую неделю и Эльли каждый день.</p><span class="go">Подробнее ↗</span></a>
+    <a class="p" href="https://katekoryagina.ru/5element-new/"><small>Старт 21 декабря</small><h3>5 Элемент: тантра с жизнью</h3><p>Для тебя, если крутишься в одном сценарии с людьми и деньгами и прячешь себя настоящую. Тело заново чувствует, ты выбираешь по-новому.</p><span class="go">Подробнее ↗</span></a>
+    <a class="p" href="https://katekoryagina.ru/rezonans/"><small>Мастер-группа · вход через собеседование</small><h3>Резонанс</h3><p>Для экспертов и предпринимательниц: продукт из сути, контент с ИИ-агентами, воронка и продажи нового времени. Группа до 10 человек.</p><span class="go">Подробнее ↗</span></a>
+    <a class="p" href="#tantra"><small>Офлайн · лично</small><h3>Тантра жизни</h3><p>Личные телесно-ориентированные сессии: высвобождение от подавленных эмоций и раскрытие чувствительности.</p><span class="go">Подробнее ↓</span></a>
+  </div>
+</div></section>
+
+<section id="tantra" class="tantra"><div class="wrap grid">
+  <div>
+    <p class="kick">Личные офлайн-сессии</p>
+    <h2>Тантра <em style="color:#8a6d12">жизни</em></h2>
+    <p>Высвобождение от подавленных эмоций и раскрытие чувствительности. Работаю как телесно-ориентированный психотерапевт: через тело, дыхание и присутствие достаём то, что годами держится внутри, и возвращаем способность чувствовать, наслаждаться и жить в полную силу.</p>
+    <ul>
+      <li>Уходят зажимы и ком в горле, тело становится живым и мягким</li>
+      <li>Возвращается чувствительность, удовольствие и контакт с собой</li>
+      <li>Отпускают старые обиды и страхи, становится легче дышать</li>
+      <li>Лично со мной, один на один, офлайн</li>
+    </ul>
+  </div>
+  <div>
+    <div class="price">от 15 000 ₽ <small>/ час</small></div>
+    <a class="btn" href="https://yookassa.ru/my/i/auzb0ZzIoQh3/l">Оплатить сессию</a>
+    <p class="note">После оплаты напиши мне в Telegram <a href="https://t.me/nastavnikkate">@nastavnikkate</a>, подберём дату и время. Есть вопросы до оплаты, пиши туда же.</p>
+  </div>
+</div></section>
+
+<section id="keisy"><div class="wrap">
+  <p class="kick">Кейсы</p>
+  <h2>Результаты <em>клиенток</em></h2>
+  <div class="kc">
+    <img src="../rezonans/img/kcase_00.jpg" alt="Кейс клиентки Екатерины" loading="lazy" width="900" height="900">
+    <img src="../rezonans/img/kcase_01.jpg" alt="Кейс клиентки Екатерины" loading="lazy" width="900" height="900">
+    <img src="../rezonans/img/kcase_02.jpg" alt="Кейс клиентки Екатерины" loading="lazy" width="900" height="900">
+    <img src="../rezonans/img/kcase_03.jpg" alt="Кейс клиентки Екатерины" loading="lazy" width="900" height="900">
+    <img src="../rezonans/img/kcase_04.jpg" alt="Кейс клиентки Екатерины" loading="lazy" width="900" height="900">
+    <img src="../rezonans/img/kcase_05.jpg" alt="Кейс клиентки Екатерины" loading="lazy" width="900" height="900">
+    <img src="../rezonans/img/kcase_06.jpg" alt="Кейс клиентки Екатерины" loading="lazy" width="900" height="900">
+    <img src="../rezonans/img/kcase_07.jpg" alt="Кейс клиентки Екатерины" loading="lazy" width="900" height="900">
+    <img src="../rezonans/img/kcase_08.jpg" alt="Кейс клиентки Екатерины" loading="lazy" width="900" height="900">
+  </div>
+  <p class="swipe">Листай в сторону</p>
+  <h3 style="margin-top:34px">Клиентки в цифрах</h3>
+  <p style="color:var(--mut)">35 кейсов с 0 до 5 млн ₽ и 122 кейса с 0 до 1 млн ₽.</p>
+  <div class="cases">
+    <div class="case"><img src="../rezonans/img/case_00.jpg" alt="olga._novoselova" loading="lazy" width="220" height="220"><span>@olga._novoselova</span><b>+1&nbsp;350&nbsp;000&nbsp;₽</b></div>
+    <div class="case"><img src="../rezonans/img/case_01.jpg" alt="valeriya_gartman" loading="lazy" width="220" height="220"><span>@valeriya_gartman</span><b>+3&nbsp;000&nbsp;000&nbsp;₽</b></div>
+    <div class="case"><img src="../rezonans/img/case_02.jpg" alt="zueva.top" loading="lazy" width="220" height="220"><span>@zueva.top</span><b>+1&nbsp;000&nbsp;000&nbsp;₽</b></div>
+    <div class="case"><img src="../rezonans/img/case_03.jpg" alt="gala_brend_" loading="lazy" width="220" height="220"><span>@gala_brend_</span><b>+1&nbsp;500&nbsp;000&nbsp;₽</b></div>
+    <div class="case"><img src="../rezonans/img/case_04.jpg" alt="oksana.ogniva_" loading="lazy" width="220" height="220"><span>@oksana.ogniva_</span><b>+1&nbsp;600&nbsp;000&nbsp;₽</b></div>
+    <div class="case"><img src="../rezonans/img/case_05.jpg" alt="gordeevkv" loading="lazy" width="220" height="220"><span>@gordeevkv</span><b>+1&nbsp;200&nbsp;000&nbsp;₽</b></div>
+    <div class="case"><img src="../rezonans/img/case_06.jpg" alt="chervonnaya_yana" loading="lazy" width="220" height="220"><span>@chervonnaya_yana</span><b>+1&nbsp;250&nbsp;000&nbsp;₽</b></div>
+    <div class="case"><img src="../rezonans/img/case_07.jpg" alt="sasha.troitskaya" loading="lazy" width="220" height="220"><span>@sasha.troitskaya</span><b>+1&nbsp;480&nbsp;000&nbsp;₽</b></div>
+    <div class="case"><img src="../rezonans/img/case_08.jpg" alt="lady_nataly_lovee" loading="lazy" width="220" height="220"><span>@lady_nataly_lovee</span><b>+1&nbsp;800&nbsp;000&nbsp;₽</b></div>
+    <div class="case"><img src="../rezonans/img/case_09.jpg" alt="angelia_avrax86" loading="lazy" width="220" height="220"><span>@angelia_avrax86</span><b>+800&nbsp;000&nbsp;₽</b></div>
+    <div class="case"><img src="../rezonans/img/case_10.jpg" alt="annazhu_k" loading="lazy" width="220" height="220"><span>@annazhu_k</span><b>+1&nbsp;330&nbsp;000&nbsp;₽</b></div>
+    <div class="case"><img src="../rezonans/img/case_11.jpg" alt="shtyk.anna" loading="lazy" width="220" height="220"><span>@shtyk.anna</span><b>+3&nbsp;300&nbsp;000&nbsp;₽</b></div>
+    <div class="case"><img src="../rezonans/img/case_12.jpg" alt="anichka_psy" loading="lazy" width="220" height="220"><span>@anichka_psy</span><b>+2&nbsp;000&nbsp;000&nbsp;₽</b></div>
+    <div class="case"><img src="../rezonans/img/case_13.jpg" alt="irinrodina" loading="lazy" width="220" height="220"><span>@irinrodina</span><b>+1&nbsp;125&nbsp;000&nbsp;₽</b></div>
+    <div class="case"><img src="../rezonans/img/case_14.jpg" alt="bogdanova_cat" loading="lazy" width="220" height="220"><span>@bogdanova_cat</span><b>+940&nbsp;000&nbsp;₽</b></div>
+  </div>
+</div></section>
+
+<section id="video" style="padding-top:0"><div class="wrap">
+  <p class="kick">Видео</p>
+  <h2>Живые <em>разборы</em></h2>
+  <p class="lead" style="margin-bottom:26px">Как я работаю с запросами вживую: участницы приходят со своей историей и уходят с ясностью.</p>
+  <div class="vids">
+    <div class="vid"><div class="fr"><iframe src="https://www.youtube-nocookie.com/embed/JtT4WyqRxMg" title="Квантовые разборы" loading="lazy" allowfullscreen></iframe></div><p>Квантовые разборы: позволь себе быть настоящей и живой</p></div>
+    <div class="vid"><div class="fr"><iframe src="https://www.youtube-nocookie.com/embed/0_xyaCg1_FU" title="Мастермайнд Самоблокировка" loading="lazy" allowfullscreen></iframe></div><p>Мастермайнд «Самоблокировка»</p></div>
+    <div class="vid"><div class="fr"><iframe src="https://www.youtube-nocookie.com/embed/rK9E4xwaxLU" title="Эфир-разбор" loading="lazy" allowfullscreen></iframe></div><p>Эфир-разбор: как сдаться своему масштабу и успеху</p></div>
+    <div class="vid"><div class="fr"><iframe src="https://www.youtube-nocookie.com/embed/22tkqsaYhkA" title="Эльли" loading="lazy" allowfullscreen></iframe></div><p>ИИ-наставник Эльли: как это работает</p></div>
+  </div>
+</div></section>
+
+<section id="start" style="padding-top:0"><div class="wrap">
+  <div class="final">
+    <p class="kick">Следующий шаг</p>
+    <h2>Оставь заявку <em>на работу</em></h2>
+    <p>Напиши мне пару строк о себе и своём запросе. Отвечу лично и скажу, с чего тебе начать.</p>
+    <a class="btn" href="https://t.me/nastavnikkate">Узнать, с чего начать</a>
+    <div class="mag">
+      <a class="p free" href="https://t.me/koryaginakate_bot?start=kub"><small>Бесплатно</small><h3>Куб высшей миссии</h3><span class="go">Получить расчёт ↗</span></a>
+      <a class="p free" href="https://t.me/koryaginakate_bot?start=tochka-pravdy"><small>Бесплатно</small><h3>Точка правды</h3><span class="go">Пройти ↗</span></a>
+    </div>
+    <div class="soc">
+      <a href="https://t.me/provdox">Telegram-канал</a>
+      <a href="https://youtube.com/@koryagina_kate">YouTube</a>
+      <a href="https://www.instagram.com/koryagina.kate/">Instagram</a>
+      <a href="https://t.me/nastavnikkate">Написать лично</a>
+    </div>
+  </div>
+</div></section>
+
+<footer>Екатерина Корягина · @nastavnikkate</footer>
+</body>
+</html>
