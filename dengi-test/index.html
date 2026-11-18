@@ -226,7 +226,10 @@ function result(){
   h+='<div class="sc"><span class="lvl">'+(x.p===3?'Ведущий':x.p===2?'Активный':'Фоновый')+' · '+x.p+' из 3</span><h3>«'+s.n+'»</h3><p class="vo">'+s.v+'</p>'+
   '<p><b>Как бьёт по деньгам.</b> '+s.m+'</p><p><b>Красивое оправдание.</b> '+s.k+'</p><p><b>Шаг на этой неделе.</b> '+s.s+'</p></div>';});
  document.getElementById('rsc').innerHTML=h;
- document.getElementById('map').innerHTML=sc.map(function(x){return '<span>'+x.n+'</span><span>'+x.p+'</span>';}).join('');
+ var mp=srt.filter(function(x){return x.p>0;});
+ var mb=document.getElementById('map');
+ mb.innerHTML=mp.map(function(x){return '<span>'+x.n+'</span><span>'+x.p+'</span>';}).join('');
+ mb.parentNode.classList.toggle('hidden',!mp.length);
  document.getElementById('qz').classList.add('hidden');
  document.getElementById('qz').nextElementSibling.classList.add('hidden');
  document.getElementById('res').classList.remove('hidden');
